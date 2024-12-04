@@ -1,1 +1,0 @@
-# iamkarthikarun.github.io
