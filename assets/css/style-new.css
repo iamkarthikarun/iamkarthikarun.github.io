@@ -329,6 +329,7 @@ main.touch .main-wrap {
 .fixed-nav-rounded-div .rounded-div-wrap {
    width: 6vw;
    height: 100%;
+   /* transform-origin: right center; */
    transition: var(--animation-slow);
    transition: all .85s cubic-bezier(.7, 0, .2, 1);
    will-change: width;
@@ -347,7 +348,9 @@ main.touch .main-wrap {
    width: 775%;
    top: 50%;
    border-radius: 50%;
-   transform: translate(-6.5%, -50%);
+   transform: translate(-93.5%, -50%);  /* Adjusted to show curved edge from left */
+   left: 0;
+   right: auto;
 }
 
 .fixed-nav .nav-row ul .btn {
