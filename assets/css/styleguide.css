@@ -752,8 +752,8 @@ video.overlay {
 
 .btn-hamburger .btn-click,
 .btn-hamburger .btn-text {
-    width: clamp(4em, 5.5vw, 5em);
-    height: clamp(4em, 5.5vw, 5em);
+    width: clamp(3em, 4vw, 4em);
+    height: clamp(3em, 4vw, 4em);
     border-radius: 50%;
 }
 
@@ -866,7 +866,7 @@ main .btn-hamburger.active {
 /* --- Button Icon --- */
 
 .btn-icon .btn-click {
-    width: 4.25em;
+    width: 2.25em;
 }
 
 .btn-icon .btn-click .btn-text-inner {
