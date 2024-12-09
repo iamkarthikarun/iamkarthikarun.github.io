@@ -235,7 +235,7 @@ main.touch .main-wrap {
 /* ------------------------- Fixed Nav -------------------------------------------------- */
 
 .fixed-nav-back {
-   background: linear-gradient(to right,hsla(220, 13%, 0%, .3) 40%, hsla(220, 13%, 0%, 1) 80%);
+   background: linear-gradient(to left, hsla(220, 13%, 0%, .3) 40%, hsla(220, 13%, 0%, 1) 80%);  /* Changed direction */
    opacity: 0;
    transition: opacity .8s cubic-bezier(.7, 0, .2, 1);
    z-index: 100;
@@ -250,12 +250,12 @@ main.touch .main-wrap {
 
 .fixed-nav {
    position: fixed;
-   right: 0;
+   left: 0;  /* Changed from right to left */
    top: 0;
    height: 100vh;
    background: var(--color-dark);
    z-index: 100;
-   transform: translate(calc(100% + 6vw),0) rotate(0.001deg);
+   transform: translate(calc(-100% - 6vw), 0) rotate(0.001deg);  /* Changed from positive to negative */
    transition: transform .8s cubic-bezier(.7, 0, .2, 1);
    will-change: transform;
 }
@@ -320,8 +320,8 @@ main.touch .main-wrap {
 
 .fixed-nav-rounded-div {
    position: absolute;
-   left: 1px;
-   transform: translateX(-100%);
+   right: 1px;  /* Changed from left to right */
+   transform: translateX(100%);  /* Changed from -100% to 100% */
    height: 100%;
    top: 0;
 }
@@ -383,13 +383,13 @@ main.touch .main-wrap {
 
    .fixed-nav {
       width: 100%;
-      transform: translate(calc(100% + 20vw),0) rotate(0.001deg);
+      transform: translate(calc(-100% - 20vw), 0) rotate(0.001deg);  /* Changed from positive to negative */
    }
 
    .fixed-nav .fixed-nav-inner {
       height: calc(var(--vh, 1vh) * 100);
       padding: calc(var(--vh, 1vh) * 15) var(--container-padding) calc(var(--gap-padding) * 1.25) var(--container-padding);
-      transform: translate(20vw,0) rotate(0.001deg);
+      transform: translate(-20vw, 0) rotate(0.001deg);
       transition-delay: 0s;
    }
 
