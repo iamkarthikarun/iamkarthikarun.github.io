@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Dennis Snellenberg • Freelance Designer & Developer</title>
+    <title>Karthik Arun - Data Scientist</title>
     <meta name="description"
         content="Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis" />
     <meta property="og:title" content="Dennis Snellenberg • Freelance Designer & Developer" />
@@ -49,9 +49,11 @@
             <div class="loading-words">
                 <h2 class="home-active home-active-first">Hello<div class="dot"></div>
                 </h2>
-                <h2 class="home-active">Bonjour<div class="dot"></div>
+                <h2 class="home-active">வணக்கம்<div class="dot"></div>
                 </h2>
                 <h2 class="home-active">स्वागत हे<div class="dot"></div>
+                </h2>
+                <h2 class="home-active">Bonjour<div class="dot"></div>
                 </h2>
                 <h2 class="home-active">Ciao<div class="dot"></div>
                 </h2>
@@ -63,7 +65,7 @@
                 </h2>
                 <h2 class="home-active">Guten tag<div class="dot"></div>
                 </h2>
-                <h2 class="home-active-last">Hallo<div class="dot"></div>
+                <h2 class="home-active-last">Hello<div class="dot"></div>
                 </h2>
             </div>
             <div class="rounded-div-wrap bottom">
@@ -302,59 +304,108 @@
                 </div>
             </div>
         </section>
-        <section class="section work-grid large-work-grid" data-scroll-section>
+        <section class="section experience-grid" data-scroll-section>
             <div class="container">
                 <div class="grid-sub-title">
                     <div class="flex-col">
-                        <h5>Recent work</h5>
+                        <h5>Experience</h5>
                     </div>
                 </div>
-                <ul class="work-items mouse-pos-list-image-wrap">
-                    <li class="development interaction visible">
+                <ul class="experience-items">
+                    <!-- Singapore Airlines -->
+                    <li class="experience-item visible">
                         <div class="stripe animate"></div>
-                        <a href="work/twice.html" class="row">
-                            <div class="flex-col">
-                                <h4><span>TWICE</span></h4>
+                        <div class="experience-content">
+                            <div class="experience-details">
+                                <div class="role-header">
+                                    <h4>Data Science and Generative AI- Intern</h4>
+                                    <span class="duration">Mar 2024 - Aug 2024</span>
+                                </div>
+                                <div class="role-description">
+                                    Architected and deployed an enterprise-grade RAG system using AWS Bedrock and custom quantized LLMs, reducing document retrieval time by 30%. Implemented advanced prompt engineering techniques for technical document QA, while building robust FastAPI endpoints achieving 50ms average first token latency.
+                                </div>
                             </div>
-                            <div class="flex-col animate">
-                                <p>Interaction & Development</p>
+                            <div class="employer-logo animate">
+                                <img src="assets/img/SIA-Employer-Logo.png" alt="Singapore Airlines">
+                            </div>
+                        </div>
+                    </li>
+        
+                    <!-- Deloitte -->
+                    <li class="experience-item visible">
+                        <div class="stripe animate"></div>
+                        <div class="experience-content">
+                            <div class="experience-details">
+                                <div class="role-header">
+                                    <h4>Analyst, Salesforce</h4>
+                                    <span class="duration">Jul 2021 - Jul 2023</span>
+                                </div>
+                                <div class="role-description">
+                                    Developed and deployed large-scale predictive models using AWS SageMaker for customer churn prediction and inventory optimization. Led cross-functional teams to implement personalized recommendation systems on Salesforce Einstein AI, while engineering scalable data pipelines using AWS Glue for processing 1TB+ of customer transaction data.
+                                </div>
+                            </div>
+                            <div class="employer-logo animate">
+                                <img src="assets/img/Deloitte-Logo.jpg" alt="Deloitte">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="section projects-grid" data-scroll-section>
+            <div class="container">
+                <div class="grid-sub-title">
+                    <div class="flex-col">
+                        <h5>Projects</h5>
+                    </div>
+                </div>
+                <ul class="project-items">
+                    <li class="project-item visible">
+                        <div class="stripe animate"></div>
+                        <a href="https://github.com/iamkarthikarun/BullyGuard" target="_blank" class="project-row">
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h4><span>BullyGuard</span></h4>
+                                    <p class="project-description">
+                                        ML-powered Discord moderation bot that detects and handles toxic messages in real-time. Uses a fine-tuned DistilBERT model to catch toxic content and implements an escalating response system to keep your server dandy</p>
+                                </div>
+                                <div class="company-logo animate">
+                                    <img src="assets/img/sastra-logo.jpg" alt="SASTRA University Logo">
+                                </div>
                             </div>
                         </a>
                     </li>
-                    <li class="design development interaction visible">
+                    <li class="project-item visible">
                         <div class="stripe animate"></div>
-                        <a href="work/the-damai.html" class="row">
-                            <div class="flex-col">
-                                <h4><span>The Damai</span></h4>
-                            </div>
-                            <div class="flex-col animate">
-                                <p>Design & Development</p>
+                        <a href="https://github.com/iamkarthikarun/QuizMasterAI" target="_blank" class="project-row">
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h4><span>QuizMasterAI</span></h4>
+                                    <p class="project-description">
+                                        A POC implementation of a RAG-based intelligent question generation system that processes educational texts through LLM based OCR and generates structured assessments using a fine-tuned Llama3 model.</p>
+                                </div>
+                                <div class="company-logo animate">
+                                    <img src="assets/img/nus-logo.png" alt="NUS Logo">
+                                </div>
                             </div>
                         </a>
                     </li>
-                    <li class="design development interaction visible">
+                    <li class="project-item visible">
                         <div class="stripe animate"></div>
-                        <a href="work/fabric.html" class="row">
-                            <div class="flex-col">
-                                <h4><span>FABRIC™</span></h4>
-                            </div>
-                            <div class="flex-col animate">
-                                <p>Design & Development</p>
+                        <a href="https://github.com/iamkarthikarun/Turbo-Predict" target="_blank" class="project-row">
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h4><span>TurboPredict</span></h4>
+                                    <p class="project-description">
+                                        An aircraft engine RUL prediction system leveraging NASA's C-MAPSS dataset and some internal data, featuring real-time sensor monitoring and predictive analytics through an interactive dashboard.</p>
+                                </div>
+                                <div class="company-logo animate">
+                                    <img src="assets/img/sia-logo.png" alt="SIA Logo">
+                                </div>
                             </div>
                         </a>
                     </li>
-                    <li class="design development interaction visible">
-                        <div class="stripe animate"></div>
-                        <a href="work/aanstekelijk.html" class="row">
-                            <div class="flex-col">
-                                <h4><span>Aanstekelijk</span></h4>
-                            </div>
-                            <div class="flex-col animate">
-                                <p>Design & Development</p>
-                            </div>
-                        </a>
-                    </li>
-                    <div class="stripe last animate"></div>
+                    <!-- More project items follow the same pattern -->
                 </ul>
             </div>
         </section>
