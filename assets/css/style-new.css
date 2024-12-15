@@ -112,9 +112,8 @@ main.touch .main-wrap {
 
 .loading-container .loading-words {
    position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+   width: 100%;
+   height: 100vh;
    opacity: 0;
    pointer-events: none;
    display: block;
@@ -126,18 +125,15 @@ main.touch .main-wrap {
    padding: 0;
    color: var(--color-white);
    position: absolute;
-   top:0;
-   left: 50%;
-   transform: translateX(-50%);
    display: none;
-   padding-left: .6em;
    white-space: nowrap;
-   padding-right: .4em;
    will-change: opacity;
+   font-size: 2.5rem
+   /* padding-left: 0.6em; */
 }
 
 .loading-container .loading-words h2.jap {
-   font-size: calc(clamp(3.25em, 5vw, 4.5em) * .65);
+   font-size: calc(clamp(3.25em, 5vw, 4.5em) * .35);
    transform: translate(-50%, 10%);
 }
 
@@ -146,12 +142,11 @@ main.touch .main-wrap {
    position: absolute;
    border-radius: 50%;
    background: var(--color-white);
-   left: 0;
-   top: 47%;
-   bottom: auto;
-   width: calc(clamp(16px, 1.2vw, 19px) / 1.65);
-   height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
-   transform: translate(0, 0) scale(1);
+   left: -0.35em;
+   top: 50%;
+   transform: translateY(-50%);
+   width: calc(clamp(16px, 1.2vw, 19px) / 2);
+   height: calc(clamp(16px, 1.2vw, 19px) / 2);
 }
 
 .loading-container .loading-words h2.active {
@@ -162,6 +157,45 @@ main.touch .main-wrap {
 .loading-container .loading-words .home-active-last {
    opacity: 0;
    display: none;
+}
+
+.home-active:nth-child(2)  {left:calc(1085.54px + var(--left-offset)); top: 245.469px; }
+.home-active:nth-child(3)  {left:calc(1161.91px + var(--left-offset)); top: 721.459px; }
+.home-active:nth-child(4)  {left:calc(883.185px + var(--left-offset)); top: 569.800px; }
+.home-active:nth-child(5)  {left:calc(951.861px + var(--left-offset)); top: 319.913px; }
+.home-active:nth-child(6)  {left:calc(856.372px + var(--left-offset)); top: 435.933px; }
+.home-active:nth-child(7)  {left:calc(1066.44px + var(--left-offset)); top: 637.338px; }
+.home-active:nth-child(8)  {left:calc(760.883px + var(--left-offset)); top: 307.989px; }
+.home-active:nth-child(9)  {left:calc(989.049px + var(--left-offset)); top: 178.025px; }
+.home-active:nth-child(10) {left:calc(1276.50px + var(--left-offset)); top: 333.836px; }
+.home-active:nth-child(11) {left:calc(1219.21px + var(--left-offset)); top: 615.244px; }
+.home-active:nth-child(12) {left:calc(779.976px + var(--left-offset)); top: 650.014px; }
+.home-active:nth-child(13) {left:calc(818.185px + var(--left-offset)); top: 219.546px; }
+.home-active:nth-child(14) {left:calc(983.767px + var(--left-offset)); top: 758.304px; }
+.home-active:nth-child(15) {left:calc(1295.61px + var(--left-offset)); top: 484.126px; }
+.home-active:nth-child(16) {left:calc(844.875px + var(--left-offset)); top: 737.622px; }
+.home-active:nth-child(17) {left:calc(703.601px + var(--left-offset)); top: 448.356px; }
+.home-active:nth-child(18) {left:calc(742.601px + var(--left-offset)); top: 555.648px; }
+.home-active:nth-child(19) {left:calc(1117.47px + var(--left-offset)); top: 369.254px; }
+.home-active:nth-child(20) {left:calc(1142.82px + var(--left-offset)); top: 524.876px; }
+
+/* Add special size adjustments for specific scripts */
+.loading-container .loading-words h2.asian-script {
+   font-size: calc(clamp(3.25em, 5vw, 4.5em) * 0.35);
+}
+
+/* Center the first and last Hello */
+.loading-container .loading-words h2.home-active-first{
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.loading-container .loading-words h2.home-active-last {
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 6rem;
 }
 
 .loading-fade {
@@ -2983,6 +3017,138 @@ main.touch .case-intro-image .btn-wrap {
 
    .employer-logo img {
        max-height: 80px;
+   }
+}
+
+/* Education Section */
+.education-grid {
+   padding: 4rem 0;
+}
+
+.education-cards {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+}
+
+.education-card {
+   background: var(--color-dark);
+   border-radius: 12px;
+   padding: 3rem;
+   color: var(--color-white);
+   transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+   transform: translateX(10px);
+}
+
+.education-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 3rem;
+}
+
+.education-details {
+   flex: 0 0 65%;
+}
+
+.degree-header {
+   margin-bottom: 1.5rem;
+}
+
+.degree-header h4 {
+   font-size: 2.5rem;
+   margin-bottom: 0.5rem;
+   font-weight: 500;
+}
+
+.specialization {
+   display: block;
+   font-size: 1.25rem;
+   color: var(--accent-color);
+   margin-bottom: 0.5rem;
+}
+
+.duration {
+   display: block;
+   font-size: 1rem;
+   color: rgba(255, 255, 255, 0.6);
+}
+
+.university-name {
+   font-size: 1.1rem;
+   margin-bottom: 1rem;
+   color: rgba(255, 255, 255, 0.8);
+}
+
+.key-courses {
+   display: flex;
+   gap: 0.75rem;
+   flex-wrap: wrap;
+   margin-top: 1rem;
+}
+
+.key-courses span {
+   background: rgba(255, 255, 255, 0.1);
+   padding: 0.5rem 1rem;
+   border-radius: 20px;
+   font-size: 0.9rem;
+   transition: background 0.3s ease;
+}
+
+.key-courses span:hover {
+   background: rgba(255, 255, 255, 0.2);
+}
+
+.university-logo {
+   flex: 0 0 30%;
+   display: flex;
+   justify-content: flex-end; /* Align to right */
+   align-items: center;
+   min-width: 120px; /* Ensure minimum width */
+}
+
+.university-logo img {
+   height: 120px;
+   width: 120px; /* Set fixed width */
+   object-fit: contain;
+   filter: none;
+   display: block; /* Ensure proper rendering */
+   background: transparent; /* Ensure transparent background */
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+   .education-card {
+       padding: 2rem;
+   }
+
+   .education-content {
+       flex-direction: column;
+       gap: 2rem;
+   }
+
+   .education-details,
+   .university-logo {
+       flex: 0 0 100%;
+   }
+
+   .degree-header h4 {
+       font-size: 2rem;
+   }
+
+   .university-logo img {
+       height: 80px;
+   }
+
+   .key-courses {
+       gap: 0.5rem;
+   }
+
+   .key-courses span {
+       font-size: 0.8rem;
    }
 }
 

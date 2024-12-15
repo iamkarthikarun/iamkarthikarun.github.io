@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Layout Test</title>
+    <style>
+        :root{
+            --left-offset: 225px;
+        }
+        body {
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .loading-container {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .loading-words {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        .loading-words::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 450px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+.loading-words h2 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+        .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+        .loading-words::before,
+        .loading-words::after,
+        .loading-words .circle-1,
+        .loading-words .circle-2,
+        .loading-words .circle-3,
+        .loading-words .circle-4,
+        .loading-words .circle-5,
+        .loading-words .circle-6 {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%; /* Move circles to the left to match image */
+            transform: translate(-50%, -50%);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .loading-words::before { width: 100px; height: 100px; }
+        .loading-words::after { width: 200px; height: 200px; }
+        .loading-words .circle-1 { width: 300px; height: 300px; }
+        .loading-words .circle-2 { width: 400px; height: 400px; }
+        .loading-words .circle-3 { width: 500px; height: 500px; }
+        .loading-words .circle-4 { width: 600px; height: 600px; }
+        .loading-words .circle-5 { width: 700px; height: 700px; }
+        .loading-words .circle-6 { width: 800px; height: 800px; }
+        /* Positions for the hello words */
+        .home-active:nth-child(2) { left: calc(763.875px + var(--left-offset)); top: 293.438px; }
+        .home-active:nth-child(3) { left: calc(822.625px + var(--left-offset)); top: 631.891px; }
+        .home-active:nth-child(4) { left: calc(608.219px + var(--left-offset)); top: 516px; }
+        .home-active:nth-child(5) { left: calc(661.047px + var(--left-offset)); top: 357.625px; }
+        .home-active:nth-child(6) { left: calc(587.594px + var(--left-offset)); top: 412.641px; }
+        .home-active:nth-child(7) { left: calc(749.188px + var(--left-offset)); top: 566.875px; }
+        .home-active:nth-child(8) { left: calc(514.141px + var(--left-offset)); top: 348.453px; }
+        .home-active:nth-child(9) { left: calc(690.422px + var(--left-offset)); top: 229.25px; }
+        .home-active:nth-child(10) { left: calc(910.766px + var(--left-offset)); top: 366.797px; }
+        .home-active:nth-child(11) { left: calc(866.703px + var(--left-offset)); top: 550.188px; }
+        .home-active:nth-child(12) { left: calc(528.828px + var(--left-offset)); top: 577.703px; }
+        .home-active:nth-child(13) { left: calc(558.219px + var(--left-offset)); top: 284.266px; }
+        .home-active:nth-child(14) { left: calc(686.359px + var(--left-offset)); top: 660.234px; }
+        .home-active:nth-child(15) { left: calc(925.469px + var(--left-offset)); top: 449.328px; }
+        .home-active:nth-child(16) { left: calc(578.75px + var(--left-offset)); top: 645.094px; }
+        .home-active:nth-child(17) { left: calc(470.078px + var(--left-offset)); top: 421.812px; }
+        .home-active:nth-child(18) { left: calc(500.078px + var(--left-offset)); top: 504.344px; }
+        .home-active:nth-child(19) { left: calc(788.438px + var(--left-offset)); top: 391.734px; }
+        .home-active:nth-child(20) { left: calc(807.938px + var(--left-offset)); top: 476.828px; }
+
+        /* Center the first and last Hello */
+        .home-active-first,
+        .home-active-last {
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%);
+        }
+        .asian-script {
+    font-size: calc(2rem * 0.85) !important;
+}
+        /* Size adjustments for specific scripts */
+        .jap, 
+        [class*="home-active"]:nth-child(12),
+        [class*="home-active"]:nth-child(13) {
+            font-size: calc(2rem * 0.85);
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="loading-screen">
+            <div class="rounded-div-wrap top">
+                <div class="rounded-div"></div>
+            </div>
+            <div class="loading-words">
+                <h2 class="home-active home-active-first">Hello<div class="dot"></div></h2>
+                <h2 class="home-active">வணக்கம்<div class="dot"></div></h2>
+                <h2 class="home-active">स्वागत हे<div class="dot"></div></h2>
+                <h2 class="home-active">Bonjour<div class="dot"></div></h2>
+                <h2 class="home-active">Ciao<div class="dot"></div></h2>
+                <h2 class="home-active">Olá<div class="dot"></div></h2>
+                <h2 class="home-active jap">おい<div class="dot"></div></h2>
+                <h2 class="home-active">Hallå<div class="dot"></div></h2>
+                <h2 class="home-active">Guten tag<div class="dot"></div></h2>
+                <h2 class="home-active">Hola<div class="dot"></div></h2>
+                <h2 class="home-active">Привет<div class="dot"></div></h2>
+                <h2 class="home-active">안녕하세요<div class="dot"></div></h2>
+                <h2 class="home-active">Merhaba<div class="dot"></div></h2>
+                <h2 class="home-active">สวัสดี<div class="dot"></div></h2>
+                <h2 class="home-active">Salut<div class="dot"></div></h2>
+                <h2 class="home-active">مرحبا<div class="dot"></div></h2>
+                <h2 class="home-active">Hej<div class="dot"></div></h2>
+                <h2 class="home-active">Hei<div class="dot"></div></h2>
+                <h2 class="home-active">Aloha<div class="dot"></div></h2>
+                <h2 class="home-active">Kia ora<div class="dot"></div></h2>
+                <h2 class="home-active-last">Hello<div class="dot"></div></h2>
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-5"></div>
+                <div class="circle-6"></div>
+            </div>
+            
+            <div class="rounded-div-wrap bottom">
+                <div class="rounded-div"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

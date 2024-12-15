@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Layout Test</title>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .loading-container {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .loading-words {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 450px;
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+        pointer-events: none;
+        /* z-index: -1; */
+        }
+
+        .loading-words h2 {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        font-size: 2rem;
+        white-space: nowrap;
+        }
+        /* .loading-words::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 450px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: -1;
+} */
+
+
+        /* .loading-words h2 {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            font-size: 2rem;
+            white-space: nowrap;
+        } */
+        /* Position each greeting within the 600x450 container */
+.loading-words .home-active:nth-child(2) { left: 100px; top: 80px; }    /* வணக்கம் */
+.loading-words .home-active:nth-child(3) { left: 500px; top: 50px; }    /* स्वागत हे */
+.loading-words .home-active:nth-child(4) { left: 520px; top: 150px; }   /* Bonjour */
+.loading-words .home-active:nth-child(5) { left: 480px; top: 350px; }   /* Ciao */
+.loading-words .home-active:nth-child(6) { left: 350px; top: 380px; }   /* Olá */
+.loading-words .home-active:nth-child(7) { left: 180px; top: 280px; }   /* おい */
+.loading-words .home-active:nth-child(8) { left: 80px; top: 200px; }    /* Hallå */
+.loading-words .home-active:nth-child(9) { left: 150px; top: 120px; }   /* Guten tag */
+.loading-words .home-active:nth-child(10) { left: 280px; top: 180px; }  /* Hola */
+.loading-words .home-active:nth-child(11) { left: 550px; top: 320px; }  /* Привет */
+.loading-words .home-active:nth-child(12) { left: 450px; top: 250px; }  /* 你好 */
+.loading-words .home-active:nth-child(13) { left: 120px; top: 350px; }  /* 안녕하세요 */
+.loading-words .home-active:nth-child(14) { left: 400px; top: 80px; }   /* Merhaba */
+.loading-words .home-active:nth-child(15) { left: 300px; top: 220px; }  /* สวัสดี */
+.loading-words .home-active:nth-child(16) { left: 200px; top: 150px; }  /* Salut */
+        .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+
+        
+
+        /* Center the first and last Hello */
+        .loading-words .home-active-first,
+.loading-words .home-active-last {
+    left: 300px !important;
+    top: 225px !important;
+    transform: translate(-50%, -50%);
+}
+
+        /* Size adjustments for specific scripts */
+        .jap, 
+        [class*="home-active"]:nth-child(12),
+        [class*="home-active"]:nth-child(13) {
+            font-size: calc(2rem * 0.85);
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="loading-screen">
+            <div class="rounded-div-wrap top">
+                <div class="rounded-div"></div>
+            </div>
+            <div class="loading-words">
+                <h2 class="home-active home-active-first">Hello<div class="dot"></div>
+                </h2>
+                <h2 class="home-active">வணக்கம்<div class="dot"></div>
+                </h2>
+                <h2 class="home-active">स्वागत हे<div class="dot"></div>
+                </h2>
+                <h2 class="home-active">Bonjour<div class="dot"></div>
+                </h2>
+                <h2 class="home-active">Ciao<div class="dot"></div>
+                </h2>
+                <h2 class="home-active">Olá<div class="dot"></div>
+                </h2>
+                <h2 class="home-active jap">おい<div class="dot"></div>
+                </h2>
+                <h2 class="home-active">Hallå<div class="dot"></div>
+                </h2>
+                <h2 class="home-active">Guten tag<div class="dot"></div>
+                </h2>
+                <h2 class="home-active">Hola<div class="dot"></div></h2>
+                <h2 class="home-active">Привет<div class="dot"></div></h2>
+                <h2 class="home-active">안녕하세요<div class="dot"></div></h2>
+                <h2 class="home-active">Merhaba<div class="dot"></div></h2>
+                <h2 class="home-active">สวัสดี<div class="dot"></div></h2>
+                <h2 class="home-active">Salut<div class="dot"></div></h2>
+                <h2 class="home-active-last">Hello<div class="dot"></div>
+                </h2>
+
+            </div>
+            <div class="rounded-div-wrap bottom">
+                <div class="rounded-div"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
