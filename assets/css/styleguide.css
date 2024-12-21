@@ -92,11 +92,12 @@
 :root {
     /* Main Colors */
     --color-dark: #2D2B38;         /* Deep purple-gray */
-    --color-dark-dark: #201E29;    /* Darker purple-gray */
+    --color-dark-dark: #201E29;
+    --color-dark-new: #D7D7E3;    /* Darker purple-gray */
     --color-light: #E6E0F4;        /* Bright lavender (replaces white) */
     --color-blue: #9683EC;         /* Soft purple accent */
     --color-blue-dark: #7B68D9;    /* Darker purple accent */
-    --color-gray: #9895A6;         /* Muted lavender-gray */
+    --color-gray: #b399d4;         /* Muted lavender-gray */
     --color-lightgray: #F2EDF8;    /* Lighter lavender */
     --color-white: #E6E0F4;        /* Changed from white to lavender */
     

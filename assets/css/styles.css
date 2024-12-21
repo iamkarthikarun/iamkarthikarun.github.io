@@ -1,0 +1,147 @@
+/* General Reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: #b399d4; /* Updated website background */
+font-family: Arial, sans-serif;
+color: #fff;
+text-align: center;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+/* Header Navigation */
+.header {
+position: absolute;
+top: 20px;
+right: 40px;
+}
+
+.header a {
+color: #f4f1fa;
+text-decoration: none;
+margin: 0 15px;
+font-size: 16px;
+}
+
+.header a:hover {
+text-decoration: underline;
+}
+
+/* Card Section */
+.card {
+    position: relative;
+    background-color: #c4afde;
+    width: 280px;
+    height: 340px;
+    border-radius: 20px;
+    box-shadow: 
+    0px 4px 8px rgba(146, 123, 183, 1), /* Outer shadow */
+    inset 0px 3px 5px rgba(236,223,252,255); /* Inset shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* Location Tabs */
+.location-tabs {
+    display: flex; /* Align children (text and arrow) horizontally */
+    justify-content: center; /* Center all elements horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 8px; /* Add spacing between text and arrow */
+    width: 85%; /* Slightly narrower than the card */
+    margin: 0 auto; /* Center it horizontally within the card */
+    padding: 8px 12px; /* Adjusted padding for a slimmer look */
+    background-color: #b399d4; /* Background color for the pill */
+    border-radius: 20px; /* Rounded corners for a pill shape */
+    box-shadow: inset 0px 2px 4px rgba(146,123,182,255); /* Shadow only on top of the pill */
+}
+
+.location-tabs span {
+color: #4e4e4e;
+font-size: 14px;
+}
+
+/* Location Text */
+.location-text {
+    color: #634e7c;
+    font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+
+/* Arrow Circle */
+.arrow-circle {
+    background-color: #c4afde; /* Match card background color */
+    width: 22px;
+    height: 22px;
+    border-radius: 50%; /* Circular shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.double-arrow {
+    width: 12px;
+    height: 12px;
+  }
+
+/* Rive Canvas */
+#rive-canvas {
+pointer-events: auto;
+z-index: 3;
+width: 250px;
+height: 250px;
+margin-top: 20px;
+border-radius: 50%;
+background-color: #c4afde; /* Matching background */
+}
+
+/* Title Section */
+.title-section h1 {
+font-size: 28px;
+color: #fff;
+margin-top: 10px;
+}
+
+.title-section p {
+font-size: 14px;
+color: #e0e0e0;
+margin-top: 5px;
+}
+
+/* Chevron Arrow */
+.arrow-container {
+position: absolute;
+bottom: 30px;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.chevron-arrow {
+width: 30px;
+height: 30px;
+cursor: pointer;
+animation: bounce 2s infinite;
+}
+
+/* Arrow Bounce Animation */
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+}
+40% {
+    transform: translateY(-10px);
+}
+60% {
+    transform: translateY(-5px);
+}
+}

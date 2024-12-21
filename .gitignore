@@ -1,4 +1,6 @@
 _site
+_posts
+assets/js/compiled-js.js.js
 .sass-cache
 .jekyll-cache
 .jekyll-metadata

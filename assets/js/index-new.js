@@ -466,6 +466,22 @@ function initPageTransitions() {
       scroller: document.querySelector('[data-scroll-container]'),
     });
 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault(); // Prevent default anchor behavior
+  
+          const targetId = this.getAttribute('href').substring(1); // Get target ID without "#"
+          const targetElement = document.getElementById(targetId); // Find the target element
+  
+          if (targetElement) {
+              scroll.scrollTo(targetElement, {
+                  offset: 0, // Adjust offset if needed
+                  duration: 800, // Smooth scroll duration in milliseconds
+                  easing: [0.25, 0.00, 0.35, 1.00], // Easing function
+              });
+          }
+      });
+    });
     /**
      * Remove Old Locomotive Scrollbar
      */
@@ -1079,7 +1095,7 @@ function initTimeZone() {
    const timeSpan = document.querySelector("#timeSpan");
 
    const optionsTime = {
-      timeZone: 'Europe/Amsterdam',
+      timeZone: 'Asia/Kolkata',
       timeZoneName: 'short',
       // year: 'numeric',
       // month: 'numeric',

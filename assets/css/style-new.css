@@ -637,7 +637,7 @@ main.touch .main-wrap {
 /* ------------------------- Home - Header -------------------------------------------------- */
 
 .home-header {
-   min-height: 115vh;
+   min-height: 100vh;
    display: flex;
    align-items: center;
    background: var(--color-gray);
@@ -859,8 +859,217 @@ main.touch .main-wrap {
    }
    
 }
+/* The Lines on Header */
+
+.svg-container {
+   position: absolute;
+   bottom: -40%;
+   left: 0%;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   overflow: hidden;
+}
 
 
+.svg-lines {
+   display: block;
+   width: 150%; /* Extend beyond visible bounds for convergence effect */
+   height: auto; /* Maintain aspect ratio */
+   opacity: 0.5; /* Subtle appearance */
+}
+
+/* Resume Pill */
+.resume-pill {
+   position: relative; /* Position relative to parent container */
+   margin-top: 20px; /* Space between the title section and pill */
+   background-color: #c4afde;
+   color: #f9f4ff; /* Text color */
+   padding: 10px 30px; /* Padding for the pill */
+   border-radius: 50px; /* Rounded pill shape */
+   display: flex;
+   align-items: center;
+   justify-content: center; /* Center content inside the pill */
+   gap: 10px; /* Space between icon and text */
+   box-shadow: 
+       0px 4px 8px rgba(146, 123, 183, 0.3), /* Outer shadow */
+       inset 0px 2px 4px rgba(236, 223, 252, 0.4); /* Inset shadow */
+   z-index: 1000; /* Ensure it stays above other elements */
+   transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+.resume-pill a {
+   display: flex;
+   align-items: center;
+   text-decoration: none; /* Remove underline from link */
+   color: inherit; /* Inherit text color from parent */
+}
+
+.resume-pill img {
+   width: 24px; /* Icon size */
+   height: 24px;
+}
+
+.resume-pill:hover {
+   transform: scale(1.1); /* Slightly enlarge on hover */
+   box-shadow: 
+       0px 6px 8px rgba(146, 123, 183, 0.3), /* Outer shadow */
+       inset 0px 2px 4px rgba(236, 223, 252, 1);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+   .resume-pill {
+       padding: 8px 16px; /* Smaller padding for mobile devices */
+       gap: 8px;
+   }
+
+   .resume-pill img {
+       width: 20px;
+       height: 20px;
+   }
+
+   .resume-pill span {
+       font-size: 0.9rem; /* Smaller text size on mobile */
+   }
+}
+
+/* --------------------- New-Avatar ------------------------------------ */
+
+/* Profile Container */
+.profile-container {
+   display: flex;
+   flex-direction: column; /* Stack card and text vertically */
+   justify-content: center; /* Center vertically */
+   align-items: center; /* Center horizontally */
+   gap: 20px; /* Space between card and text */
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+/* Card Section */
+.card {
+   position: relative;
+   background-color: #c4afde;
+   width: 280px;
+   height: 340px;
+   border-radius: 20px;
+   box-shadow: 
+       0px 4px 8px rgba(146, 123, 183, 1), /* Outer shadow */
+       inset 0px 3px 5px rgba(236, 223, 252, 255); /* Inset shadow */
+   display: flex;
+   flex-direction: column;
+   justify-content: center; /* Align content towards the top */
+   align-items: center;
+}
+
+/* Location Tabs */
+.location-tabs {
+   display: flex; /* Align children (text and arrow) horizontally */
+   justify-content: center; /* Center all elements horizontally */
+   align-items: center; /* Center items vertically */
+   gap: 8px; /* Add spacing between text and arrow */
+   width: 85%; /* Slightly narrower than the card */
+   /* margin-top: 4%; */
+   padding: 8px 12px; /* Adjusted padding for a slimmer look */
+   background-color: #b399d4; /* Background color for the pill */
+   border-radius: 20px; /* Rounded corners for a pill shape */
+   box-shadow: inset 0px 2px 4px rgba(146,123,182,255); /* Shadow only on top of the pill */
+}
+
+.location-text {
+   color: #634e7c;
+   font-size: 14px;
+   /* font-family: 'JetBrains Mono', monospace; */
+   font-family: "JetBrains Mono", serif;
+   font-optical-sizing: auto;
+   font-weight: 500;
+   font-style: normal;
+   font-weight: 500;
+ }
+
+/* Arrow Circle */
+.arrow-circle {
+   background-color: #c4afde; /* Match card background color */
+   width: 22px;
+   height: 22px;
+   border-radius: 50%; /* Circular shape */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.double-arrow {
+   width: 12px;
+   filter: invert(49%) sepia(50%) saturate(290%) hue-rotate(222deg) brightness(98%) contrast(85%);
+}
+
+/* Rive Canvas (Avatar) */
+#rive-canvas {
+   pointer-events: auto;
+   z-index: 3;
+   width: 250px; /* Adjusted size to fit better in the card */
+   height: 250px;
+}
+
+/* Title Section (Text Below Avatar) */
+.title-section {
+   text-align: center; /* Center-align text below avatar */
+}
+
+.title-section h1 {
+
+   font-family: "Poppins", serif;
+   font-weight: 600;
+   font-style: normal;
+   font-size: 43px;
+   color: #f9f4ff;
+   margin-top: 10px;
+   margin-bottom: 5px;
+   /* font-weight: 600; */
+}
+
+.title-section p {
+   font-size: 20px;
+   color: #f9f4ff;
+   margin-top: 5px;
+   font-family: "Poppins", serif;
+   font-weight: 400;
+   font-style: normal;
+}
+
+/* Chevron Arrow */
+.arrow-container {
+   position: absolute;
+   bottom: 20px; /* Adjusted to add more space above it */
+   left: 50%;
+   transform: translateX(-50%);
+   color: #e6dcf3;
+}
+
+.chevron-arrow {
+   width: 30px;
+   color: #e6dcf3
+}
+
+/* Arrow Bounce Animation */
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+       transform: translateY(0);
+}
+40% {
+       transform: translateY(-10px);
+}
+60% {
+       transform: translateY(-5px);
+}
+}
+
+.chevron-arrow {
+animation: bounce 2s infinite; 
+cursor:pointer;}
 /* ------------------------- Home - Intro -------------------------------------------------- */
 
 .home-intro {
@@ -1185,7 +1394,23 @@ main.touch .main-wrap {
    padding-bottom: var(--gap-padding);
 }
 
+/* .experience-grid .grid-sub-title {
+   position: absolute;
+   left: 0;
+   top: 50%;
+   transform: translateY(-50%) rotate(-90deg); 
+   transform-origin: left center; 
+   font-size: 2rem;
+   font-weight: bold; 
+   color: var(--color-dark); 
+   white-space: nowrap;
+} */
+
 .work-grid .grid-sub-title h5 {
+   font-size: 3rem;
+   font-weight: bold;
+   color: var(--color-dark);
+   margin-bottom: 2rem;
    margin: 0;
    width: 100%;
 }
@@ -1777,7 +2002,29 @@ main.touch .main-wrap {
       display: none;
    }
 }
+/* ---- Header Changes ---*/
+.personal-image canvas {
+   width: 100%;
+   height: 100%;
+   background: transparent;  /* Ensures transparent background */
+}
 
+.overlay.personal-image {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: var(--color-background);  /* Match your site's background */
+}
+.rive-container {
+   position: relative;
+   z-index: 3;  /* Ensure it's above other elements */
+}
+
+#rive-canvas {
+   pointer-events: auto;
+   z-index: 3;
+  /* Enable interaction */
+}
 /* ------------------------- About - Header -------------------------------------------------- */
 
 .about-header {
@@ -2907,86 +3154,72 @@ main.touch .case-intro-image .btn-wrap {
 
 /* Experience Section */
 .experience-grid {
-   padding: 4rem 0;
+   padding: 2.5rem 0;
 }
 
 .experience-items {
    list-style: none;
    padding: 0;
    margin: 0;
-   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .experience-item {
    position: relative;
-   border-top: 1px solid rgba(0, 0, 0, 0.1);
-   padding: 4rem 0;  /* Increased padding for better vertical spacing */
+   /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
+   padding-top: 2rem;  /* Reduced padding for less vertical spacing */
+   padding-bottom: 0rem;  /* Reduced padding for less vertical spacing */
 }
 
 .experience-content {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   gap: 3rem;
+   gap: 0.5rem;
    width: 100%;
+   flex-direction: row-reverse;
 }
 
 .experience-details {
-   flex: 0 0 65%;
+   flex: 1 1 70%; /* Allow more space for details */
    display: flex;
    flex-direction: column;
-   gap: 1.5rem;  /* Consistent spacing between elements */
+   gap: 1rem;
 }
 
+/* .experience-details .role-description {
+   font-size: 2.5rem;
+} */
+
 .role-header {
-   margin-bottom: 2rem;  /* Increased spacing */
+   margin-bottom: 1rem;  /* Increased spacing */
 }
 
 .role-header h4 {
    font-size: 2.5rem;
-   margin-bottom: 0.75rem;
+   margin-top: 0.75rem;
+   margin-bottom: 0.25rem;
    color: var(--color-dark);
    font-weight: 500;
 }
 
-.duration {
-   font-size: 1.1rem;
-   color: rgba(0, 0, 0, 0.6);
-}
-
-.responsibilities {
-   list-style: none;
-   padding: 0;
-   margin: 0;  /* Remove default margins */
-}
-
-.responsibilities li {
-   position: relative;
-   padding-left: 1.5rem;
-   margin-bottom: 1rem;  /* Space between bullet points */
-}
-
-.responsibilities li::before {
-   content: "•";
-   position: absolute;
-   left: 0;
-   color: var(--accent-color);
+.experience-details .duration {
+   font-size: 1.7rem;
+   color: var(--color-dark);
 }
 
 /* Changed from company-logo to employer-logo */
 .employer-logo {
-   flex: 0 0 30%;
+   flex: 0 0 20%; /* Reduce space taken by logo */
    display: flex;
-   justify-content: center;  /* Align to right */
-   align-items: center;  /* Center vertically */
-   padding-right: 2rem;  /* Add right padding */
+   justify-content: center;
+   align-items: center;
+   padding-right: 1rem; /* Adjust padding if needed */
 }
 
 .employer-logo img {
-   width: auto;  /* Changed from 100% */
-   height: 120px;  /* Fixed height */
-   max-width: 100%;  /* Prevent overflow */
-   object-fit: contain;
+   max-width: 100%;
+   height: auto; /* Maintain aspect ratio */
 }
 
 /* Hover Effect */
@@ -2999,9 +3232,6 @@ main.touch .case-intro-image .btn-wrap {
    border-bottom: none;  /* Remove the bottom border from last item */
 }
 
-.responsibilities li:last-child {
-   margin-bottom: 0;  /* Remove margin from last bullet point */
-}
 
 /* Mobile Adjustments */
 @media screen and (max-width: 768px) {
@@ -3020,135 +3250,116 @@ main.touch .case-intro-image .btn-wrap {
    }
 }
 
+.grid-sub-title h5 {
+   font-size: 1.75rem;
+   color: var(--color-dark);
+   margin-bottom: 0.5rem;
+}
 /* Education Section */
 .education-grid {
-   padding: 4rem 0;
+   padding-top: 2rem;
+   padding-bottom: 0rem;
 }
 
-.education-cards {
+.education-items {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.education-item {
    display: flex;
-   flex-direction: column;
-   gap: 2rem;
+   justify-content: space-between;
+   align-items: center;
+   padding: 2rem 0;
+   /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
-.education-card {
-   background: var(--color-dark);
-   border-radius: 12px;
-   padding: 3rem;
-   color: var(--color-white);
-   transition: transform 0.3s ease;
-}
-
-.education-card:hover {
-   transform: translateX(10px);
-}
 
 .education-content {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   gap: 3rem;
+   width: 100%;
 }
 
 .education-details {
-   flex: 0 0 65%;
+   flex: 1 1 70%;
 }
 
-.degree-header {
-   margin-bottom: 1.5rem;
-}
-
-.degree-header h4 {
-   font-size: 2.5rem;
-   margin-bottom: 0.5rem;
+.duration-pill {
+   display: inline-block;
+   /* font-family: 'JetBrains Mono', monospace; */
+   font-family: "JetBrains Mono", serif;
+   font-optical-sizing: auto;
    font-weight: 500;
-}
-
-.specialization {
-   display: block;
-   font-size: 1.25rem;
-   color: var(--accent-color);
-   margin-bottom: 0.5rem;
-}
-
-.duration {
-   display: block;
-   font-size: 1rem;
-   color: rgba(255, 255, 255, 0.6);
-}
-
-.university-name {
-   font-size: 1.1rem;
+   font-style: normal;
+   font-size: 1.2rem;
+   background-color: #d0c4e4;
+   padding: 0.5rem 1rem;
+   border-radius: 20px;
    margin-bottom: 1rem;
-   color: rgba(255, 255, 255, 0.8);
+   outline-color: #ab94d6;
 }
 
-.key-courses {
-   display: flex;
-   gap: 0.75rem;
-   flex-wrap: wrap;
+.education-details h4 {
+   font-size: 1.85rem;
+   margin-bottom: 0.5rem;
+   font-weight: bold;
+}
+
+.degree {
+   font-size: 2rem;
+   color: var(--color-dark);
+   margin-bottom: 1rem;
+}
+
+.achievements {
+   list-style: disc;
+   list-style-type: disc;
+   padding-left: 2rem; /* Indent bullet points */
    margin-top: 1rem;
 }
 
-.key-courses span {
-   background: rgba(255, 255, 255, 0.1);
-   padding: 0.5rem 1rem;
-   border-radius: 20px;
-   font-size: 0.9rem;
-   transition: background 0.3s ease;
+.achievements li {
+   font-size: 1.25rem;
+   color: var(--color-dark);
+   display: list-item;
+   list-style-type: disc;
 }
 
-.key-courses span:hover {
-   background: rgba(255, 255, 255, 0.2);
+/* University Logo */
+.university-logo-nus {
+   flex: 0 0 auto; /* Prevent logo from shrinking */
+}
+/* University Logo */
+.university-logo-sastra {
+   flex: 0 0 auto; /* Prevent logo from shrinking */
 }
 
-.university-logo {
-   flex: 0 0 30%;
-   display: flex;
-   justify-content: flex-end; /* Align to right */
-   align-items: center;
-   min-width: 120px; /* Ensure minimum width */
+.university-logo-nus img {
+   max-height: 200px; /* Fixed height for consistency */
+   /* mix-blend-mode: multiply; */
+   /* background-blend-mode: multiply; */
 }
 
-.university-logo img {
-   height: 120px;
-   width: 120px; /* Set fixed width */
-   object-fit: contain;
-   filter: none;
-   display: block; /* Ensure proper rendering */
-   background: transparent; /* Ensure transparent background */
+.university-logo-sastra img {
+   max-height: 120px; /* Fixed height for consistency */
+   /* mix-blend-mode: multiply; */
+   /* background-blend-mode: multiply; */
 }
 
 /* Mobile Adjustments */
 @media screen and (max-width: 768px) {
-   .education-card {
-       padding: 2rem;
-   }
-
    .education-content {
        flex-direction: column;
        gap: 2rem;
-   }
-
-   .education-details,
-   .university-logo {
-       flex: 0 0 100%;
-   }
-
-   .degree-header h4 {
-       font-size: 2rem;
+       text-align: center; /* Center-align content on smaller screens */
    }
 
    .university-logo img {
-       height: 80px;
-   }
-
-   .key-courses {
-       gap: 0.5rem;
-   }
-
-   .key-courses span {
-       font-size: 0.8rem;
+       max-height: 80px; /* Smaller logo for mobile */
+       margin-top: 1rem; /* Add spacing on top */
    }
 }
 
