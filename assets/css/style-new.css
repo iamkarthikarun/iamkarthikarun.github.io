@@ -231,38 +231,82 @@ main.touch .main-wrap {
 }
 
 
-/* ------------------------- Top Bar -------------------------------------------------- */
-
+/* Navigation Bar */
 .nav-bar {
-   position: absolute;
+   position: fixed;
    top: 0;
    left: 0;
    width: 100%;
-   background: transparent;
    z-index: 5;
-   transform: translate(0,0) rotate(0.001deg);
    display: flex;
-   justify-content: space-between;
+   justify-content: center; /* Space between left and center sections */
    align-items: center;
-   padding: calc(var(--gap-padding) / 2) calc(var(--gap-padding) / 2);
+   padding: 10px 40px;
 }
 
-.nav-bar .links-wrap li:last-child {
-   display: none;
+/* Left Section: Code by Karthik */
+.credits-top {
+   font-family: "Poppins", sans-serif;
 }
 
-@media screen and (max-width: 540px){ 
+.credits-top .btn-text {
+   display: flex;
+   align-items: center;
+}
 
+.credit span {
+   font-size: 14px;
+   color: #f9f4ff; /* Light text color */
+}
+
+.cbd {
+   margin-left: 5px;
+}
+
+.cbd .code-by {
+   font-size: 14px;
+}
+
+.cbd .dennis-span {
+   font-weight: bold;
+}
+
+.cbd .snellenberg {
+   font-style: italic;
+}
+
+/* Center Section: Navigation Links */
+.centered-links {
+   list-style-type: none; /* Remove bullets */
+   display: flex; /* Align links horizontally */
+   justify-content: center; /* Center-align links */
+   gap: 40px; /* Space between links */
+}
+
+.centered-links li a {
+   text-decoration: none;
+   /* font-family: "JetBrains Mono", monospace; */
+   font-family: "JetBrains Mono", serif;
+   font-size: 18px;
+   color: #f9f4ff; /* Light text color */
+}
+
+.centered-links li a:hover {
+   color: var(--color-dark); /* Accent color on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 540px) {
    .nav-bar {
-      padding: calc(var(--gap-padding) / 1) calc(var(--gap-padding) * .5) calc(var(--gap-padding) / 1) calc(var(--gap-padding) * .33);
+       flex-direction: column; /* Stack items vertically on smaller screens */
+       padding: 20px;
+       align-items: center;
+       gap: 20px; /* Add spacing between sections */
    }
 
-   .nav-bar .links-wrap li {
-      display: none;
-   }
-
-   .nav-bar .links-wrap li:last-child {
-      display: block;
+   .centered-links {
+       flex-direction: column; /* Stack links vertically */
+       gap: 15px; /* Reduce spacing between links */
    }
 }
 
@@ -3362,6 +3406,64 @@ main.touch .case-intro-image .btn-wrap {
        margin-top: 1rem; /* Add spacing on top */
    }
 }
+
+/* Publications Section */
+.publications-section {
+   padding: 60px 20px;
+   background-color: #1c1b22; /* Dark background to match theme */
+   color: #f9f4ff;
+}
+
+.section-title {
+   font-family: "Poppins", serif;
+   font-size: 36px;
+   font-weight: 600;
+   text-align: center;
+   margin-bottom: 40px;
+   color: #f9f4ff;
+}
+
+.publications-list {
+   list-style-type: decimal; /* Numbered list */
+   padding-left: 40px; /* Indent for list items */
+}
+
+.publication-item {
+   margin-bottom: 20px; /* Space between publications */
+   line-height: 1.6; /* Improve readability */
+}
+
+.publication-item i {
+   font-style: italic;
+}
+
+.journal-details {
+   display: block;
+   margin-top: 5px;
+   font-size: 14px;
+   color: #b399d4; /* Subtle text color for journal details */
+}
+
+.publication-link {
+   display: inline-flex;
+   align-items: center;
+   margin-top: 5px;
+   text-decoration: none;
+   font-family: "Poppins", serif;
+   font-size: 14px;
+   color: #f9f4ff; /* Link color */
+}
+
+.publication-link:hover {
+   text-decoration: underline;
+}
+
+.redirect-icon {
+   width: 14px;
+   height: auto;
+   margin-left: 5px; /* Space between text and icon */
+}
+
 
 /* Projects */
 

@@ -33,7 +33,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 </head>
-
+<!-- TODO: Change the "About Me" circle to something else -->
+<!-- TODO: Add Publications section -->
+<!-- TODO: Change the color scheme of the Contact footer -->
+<!-- TODO: Change left top and right top menus -->
+<!-- TODO: Remove unused JS and CSS -->
 <body data-barba="wrapper">
     <div class="no-scroll-overlay"></div>
     <div class="loading-container">
@@ -167,56 +171,39 @@
                 <div class="arrow-container">
                     <img src="assets/img/down-arrow.svg" alt="Scroll Down Arrow" class="chevron-arrow">
                 </div>
+                
                 <div class="nav-bar">
-                    <div class="credits-top">
+                    <!-- Left Section: Code by Karthik -->
+                    <!-- <div class="credits-top">
                         <div class="btn btn-link btn-left-top">
-                            <a href="index-copy.html" class="btn-click magnetic" data-strength="20"
-                                data-strength-text="10">
+                            <a href="index-copy.html" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                                 <span class="btn-text">
                                     <div class="credit"><span>©</span></div>
-                                    <div class="cbd"><span class="code-by">Code by </span><span class="dennis"><span
-                                                class="dennis-span">Karthik</span> <span
-                                                class="snellenberg">Arun</span></span>
+                                    <div class="cbd">
+                                        <span class="code-by">Code by </span>
+                                        <span class="dennis">
+                                            <span class="dennis-span">Karthik</span>
+                                            <span class="snellenberg">Arun</span>
+                                        </span>
                                     </div>
+                                </span>
                             </a>
                         </div>
-                    </div>
-                    <ul class="links-wrap">
-                        <li class="btn btn-link">
-                            <a href="#experience" class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                                <span class="btn-text">
-                                    <span class="btn-text-inner">Work</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="btn btn-link">
-                            <a href="about.html" class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                                <span class="btn-text">
-                                    <span class="btn-text-inner">About</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="btn btn-link">
-                            <a href="contact.html" class="btn-click magnetic" data-strength="20"
-                                data-strength-text="10">
-                                <span class="btn-text">
-                                    <span class="btn-text-inner">Contact</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="btn btn-link btn-menu">
-                            <div class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                                <div class="btn-text">
-                                    <span class="btn-text-inner">Menu</span>
-                                </div>
-                            </div>
-                        </li>
+                    </div> -->
+                
+                    <!-- Center Section: Navigation Links -->
+                    <ul class="links-wrap centered-links">
+                        <li><a href="#karthik-intro">01 | Intro</a></li>
+                        <li><a href="#experience">02 | Experience</a></li>
+                        <li><a href="#education">03 | Education</a></li>
+                        <li><a href="#projects">04 | Works</a></li>
+                        <li><a href="#contact-karthik">05 | Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="white-block"></div>
             </header>
-            <section id="home" class="section home-intro" data-scroll-section>
+            <section id="karthik-intro" class="section home-intro" data-scroll-section>
                 <div class="container medium">
                     <div class="row">
                         <div class="flex-col">
@@ -350,6 +337,7 @@
                     </ul>
                 </div>
             </section>
+            
             <section id="projects" class="section projects-grid" data-scroll-section>
                 <div class="container">
                     <div class="grid-sub-title">
@@ -413,7 +401,22 @@
                                 </div>
                             </a>
                         </li>
-                        <!-- More project items follow the same pattern -->
+                        <li class="project-item visible">
+                            <div class="stripe animate"></div>
+                            <a href="https://github.com/iamkarthikarun/CloudVendorSelectionFramework" target="_blank"
+                                class="project-row">
+                                <div class="project-content">
+                                    <div class="project-header">
+                                        <h4><span>Cloud Vendor Selection Framework</span></h4>
+                                        <p class="project-description">
+                                            A Python-based modular framework for fuzzy logic-driven cloud vendor prioritization using attitudinal CRITIC and query-based decision-making.</p>
+                                    </div>
+                                    <div class="company-logo animate">
+                                        <img src="assets/img/sastra_logo_pmg.png" alt="SASTRA Logo">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -422,7 +425,7 @@
                     <div class="rounded-div"></div>
                 </div>
             </div>
-            <div class="footer-wrap footer-footer-wrap theme-dark" data-scroll-section>
+            <div id="contact-karthik" class="footer-wrap footer-footer-wrap theme-dark" data-scroll-section>
                 <footer class="section footer" data-scroll data-scroll-speed="-4" data-scroll-position="bottom">
                     <div class="container medium">
                         <div class="row">
