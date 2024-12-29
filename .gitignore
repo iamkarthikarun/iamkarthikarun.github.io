@@ -5,3 +5,5 @@ assets/js/compiled-js.js.js
 .jekyll-cache
 .jekyll-metadata
 vendor
+*.html
+!index.html
