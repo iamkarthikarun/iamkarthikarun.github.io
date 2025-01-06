@@ -7,6 +7,16 @@ assets/js/compiled-js.js.js
 vendor
 *.html
 !index.html
-!index-test-version.html
+
+node_modules/
+index-test-version.html
+*.log
+
+Gemfile
+Gemfile.lock
+
+_config.yml
 
 *.markdown
+
+media/
