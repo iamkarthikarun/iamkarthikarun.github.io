@@ -327,6 +327,16 @@ main.touch .main-wrap {
    right: 25px;
    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
    transition: all 0.3s ease-in-out;
+   width: 360px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+#toggle-chatbot svg {
+   width: 20px; /* Proper size for icon */
+   height: auto;
+   fill: #fff; /* White color for arrow icon */
 }
 
 #toggle-chatbot:hover {
@@ -336,7 +346,7 @@ main.touch .main-wrap {
 /* Chatbot Container */
 #chatbot {
    position: fixed;
-   bottom: 80px;
+   bottom: 25px;
    right: 25px;
    width: 360px;
    max-width: 90%;
@@ -346,12 +356,13 @@ main.touch .main-wrap {
    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
    overflow: hidden;
    display: none; /* Initially hidden */
+
 }
 
 /* Chatbot Header */
 #chatbot-header {
    background-color: #7351d8; /* Accent color */
-   color: #fff;
+   color: #fff; /* White text and icon color */
    font-family: "Poppins", sans-serif; /* Matches portfolio font */
    font-size: 16px; /* Reduced font size */
    font-weight: bold;
@@ -373,13 +384,21 @@ main.touch .main-wrap {
 #chatbot-header button#chatbot-close {
    background-color: transparent;
    border: none;
-   color: #fff;
-   font-size: 14px; /* Reduced font size */
    cursor: pointer;
+   display: flex; /* Ensure proper alignment of SVG inside button */
+   align-items: center; /* Center SVG vertically */
+   justify-content: center; /* Center SVG horizontally */
+}
+
+/* Ensure the SVG inside the close button inherits the correct color */
+#chatbot-header button#chatbot-close svg {
+   width: 20px; /* Adjust size of arrow icon */
+   height: 20px;
+   fill: currentColor; /* Inherit color from parent (white) */
 }
 
 #chatbot-header button#chatbot-close:hover {
-   color: #ffcccc; /* Light red hover effect */
+   color: #ffcccc; /* Light red hover effect for both text and arrow */
 }
 
 /* Chatbot Messages Container */
