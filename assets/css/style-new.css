@@ -310,6 +310,284 @@ main.touch .main-wrap {
    }
 }
 
+/* Chatbot */
+
+/* Chatbot Toggle Button */
+#toggle-chatbot {
+   padding: 10px 18px;
+   border: none;
+   border-radius: 20px;
+   background-color: #6c63ff; /* Accent color */
+   color: #fff;
+   font-family: "Poppins", sans-serif; /* Matches portfolio font */
+   font-size: 14px;
+   cursor: pointer;
+   position: fixed;
+   bottom: 25px;
+   right: 25px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+   transition: all 0.3s ease-in-out;
+}
+
+#toggle-chatbot:hover {
+   background-color: #5548c8; /* Darker shade on hover */
+}
+
+/* Chatbot Container */
+#chatbot {
+   position: fixed;
+   bottom: 80px;
+   right: 25px;
+   width: 360px;
+   max-width: 90%;
+   height: 450px; /* Total height */
+   background-color: #ffffff; /* Clean white background */
+   border-radius: 15px;
+   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+   overflow: hidden;
+   display: none; /* Initially hidden */
+}
+
+/* Chatbot Header */
+#chatbot-header {
+   background-color: #7351d8; /* Accent color */
+   color: #fff;
+   font-family: "Poppins", sans-serif; /* Matches portfolio font */
+   font-size: 16px; /* Reduced font size */
+   font-weight: bold;
+   padding: 12px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+#chatbot-header .header-left {
+   display: flex; /* Group Hawkeye and info icon together */
+   align-items: center; /* Align them vertically */
+}
+
+#chatbot-header span {
+   font-size: 16px; /* Font size for "Hawkeye" */
+}
+
+#chatbot-header button#chatbot-close {
+   background-color: transparent;
+   border: none;
+   color: #fff;
+   font-size: 14px; /* Reduced font size */
+   cursor: pointer;
+}
+
+#chatbot-header button#chatbot-close:hover {
+   color: #ffcccc; /* Light red hover effect */
+}
+
+/* Chatbot Messages Container */
+#chatbot-messages {
+   display: flex;
+   flex-direction: column; /* Stack messages vertically */
+   gap: 10px; /* Space between each message bubble */
+   padding: 15px;
+   height: calc(100% - 135px); /* Adjusted height to fit taller design */
+   overflow-y: auto; /* Scrollable messages area */
+   background-color: #f9f9f9; /* Light gray for contrast */
+}
+
+#info-button {
+   margin-left: 5px; /* Space between Hawkeye and info icon */
+   background-color: #7351d8;
+   border: none; /* Accent color border */
+   color: #f9f4ff; /* Accent color for the 'i' */
+   cursor: pointer;
+   width: auto; /* Circular dimensions */
+   height: auto;
+   border-radius: 50%; /* Make it circular */
+   display: inline-flex; /* Center 'i' inside the circle */
+   align-items: center;
+   justify-content: center;
+}
+
+#info-button svg {
+   width: 16px; /* Adjust SVG size */
+   height: auto;
+}
+
+#info-button:hover::after {
+   content: "Hi, I’m Hawkeye—your personal assistant powered by Karthik Arun! You can ask me anything about Karthik’s experience, skills, projects, or anything else you see on this portfolio. I’ll respond as if it’s Karthik himself speaking. Let’s chat!";
+   position: fixed; /* Position relative to the viewport */
+   top: 25%; /* Place the tooltip near the top of the screen */
+   right: -5%; /* Center it horizontally */
+   transform: translateX(-50%); /* Adjust for centering */
+   background-color: #e4e4e4; /* Light gray background */
+   color: #333; /* Dark text for readability */
+   padding: 15px;
+   border-radius: 8px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+   white-space: normal; /* Allow multi-line text */
+   width: 90%; /* Use most of the screen width on mobile */
+   max-width: 300px; /* Limit width on larger screens */
+   z-index: 1000; /* Ensure it appears above all other elements */
+   text-align: left; /* Align text properly */
+}
+
+/* Media query for smaller screens (mobile) */
+@media (max-width: 768px) {
+   #info-button:hover::after {
+       top: 5%; /* Position closer to the top for mobile screens */
+       width: 90%; /* Use most of the screen width */
+       font-size: 14px; /* Adjust font size for readability */
+       padding: 10px; /* Reduce padding slightly */
+   }
+
+   #info-button:hover::before {
+       top: calc(5% + 80px); /* Adjust arrow position for mobile */
+       border-width: 8px; /* Smaller arrow size on mobile */
+   }
+}
+
+
+/* Message Styling */
+.message {
+   max-width: 80%;
+   margin-bottom: 10px; /* Space between messages */
+   padding: 10px 15px; /* Padding inside the bubble */
+   border-radius: 20px; /* Pill shape */
+   font-family: "Poppins", sans-serif; /* Matches portfolio font */
+}
+
+/* User Message Styling */
+.user-message {
+   background-color: #6c63ff; /* Accent color for user messages */
+   color: #fff; /* White text for contrast */
+   align-self: flex-end; /* Align to the right */
+}
+
+/* Bot Message Styling */
+.bot-message {
+   background-color: #e4e4e4; /* Light gray for bot messages */
+   color: #333; /* Dark text for readability */
+}
+
+/* Center Messages Horizontally Within the Container */
+.message-container {
+  display:flex;
+  flex-direction: column; 
+  gap: 10px; /* Add consistent spacing between messages */
+}
+
+/* User Message Styling (Right-Aligned) */
+.user-message {
+   background-color: #6c63ff; /* Accent color for user messages */
+   color: #fff; /* White text for contrast */
+   align-self: flex-end; /* Align to the right side */
+   border-radius: 20px 20px 0 20px; /* Rounded corners with a "tail" effect */
+   padding: 10px 15px;
+   font-size: 14px; /* Slightly smaller font size for readability */
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Bot Message Styling (Left-Aligned) */
+.bot-message {
+   background-color: #e4e4e4; /* Light gray for bot messages */
+   color: #333; /* Darker text for readability */
+   align-self: flex-start; /* Align to the left side */
+   border-radius: 20px 20px 20px 0; /* Rounded corners with a "tail" effect */
+   padding: 10px 15px;
+   font-size: 14px; /* Matches user message font size */
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Chatbot Input Section */
+#chatbot-input {
+   display: flex;
+   align-items: flex-end;
+   padding: 10px;
+   border-top: 1px solid #ddd; /* Subtle divider line */
+   background-color: #f9f9f9; /* Light gray background for the input area */
+
+}
+
+#user-input {
+   flex-grow: 1; /* Take up available space */
+   padding: 5px; /* Add padding for better appearance */
+   border-radius: 10px; /* Rounded input field */
+   border: none; 
+   font-family: "Poppins", sans-serif; /* Matches portfolio font style */
+   font-size: 14px; /* Slightly larger font size */
+   height: auto; /* Allow height to grow dynamically */
+   min-height: 50px; /* Set a minimum height */
+   max-height: 100px; /* Limit maximum height */
+   overflow-y: auto; /* Add vertical scrollbar when content overflows */
+   resize: none; /* Disable manual resizing by user */
+   background-color: #e5e3e8; /* Light gray background */
+   outline: none;
+}
+
+#user-input::placeholder {
+   color: #98959b; /* Subtle placeholder color */
+}
+
+#chatbot-dummy{
+   padding: 5px;
+   background-color: #e3e5e8;
+   border-radius: 10px;
+   height: auto;
+   min-height: 50px;
+   max-height: 100px;
+   width: 90%;
+   display: flex;
+  
+}
+
+#chatbot-dummy:focus-within{
+   /* outline: #6c63ff ; */
+   filter: drop-shadow(0px 0px 2px #9664CB);
+}
+/* Scrollbar styling for textarea */
+#user-input::-webkit-scrollbar {
+   width: 6px;
+}
+
+#user-input::-webkit-scrollbar-thumb {
+   background-color: #ccc;
+   border-radius: 10px;
+}
+
+
+/* Wasted
+#user-input::-webkit-scrollbar {
+   width: 8px;
+ }
+ 
+#user-input::-webkit-scrollbar-thumb {
+   background: #ccc;
+   border-right: 4px #e5e3e8;
+   background-clip: padding-box;
+ }
+    */
+#send-button {
+   background-color: #7351d8; /* Accent color for button */
+   border: none;
+   border-radius: 50%; /* Circular button */
+   width: 40px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   margin-left: 10px; /* Add spacing between textarea and button */
+}
+
+#send-button:hover {
+   background-color: #7351d8; /* Darker shade on hover */
+}
+
+#send-button svg {
+   width: 20px;
+   height: auto;
+   fill: #fff; /* White icon color */
+}
+
 /* Fixed Nav */
 .fixed-nav-back {
    background: rgba(0, 0, 0, 0.5);  /* Simplified overlay */
