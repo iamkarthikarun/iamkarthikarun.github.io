@@ -7,6 +7,6 @@ assets/js/compiled-js.js.js
 vendor
 *.html
 !index.html
-!index-update.html
+!index-test-version.html
 
 *.markdown
