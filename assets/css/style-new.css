@@ -331,6 +331,15 @@ main.touch .main-wrap {
    display: flex;
    justify-content: space-between;
    align-items: center;
+
+   opacity: 1; /* Fully visible initially */
+   transform: scale(1); /* Normal size initially */
+   transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and scale effect */
+}
+
+#toggle-chatbot.hide {
+   opacity: 0; /* Fade out when hidden */
+   transform: scale(0.95); /* Slightly shrink for effect */
 }
 
 #toggle-chatbot svg {
@@ -357,6 +366,16 @@ main.touch .main-wrap {
    overflow: hidden;
    display: none; /* Initially hidden */
 
+   opacity: 0; /* Initially hidden */
+   transform: scale(0.95); /* Slightly scaled down for transition effect */
+   transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and scale */
+}
+
+/* When Chatbot is Visible */
+#chatbot.show {
+   opacity: 1; /* Fully visible */
+   transform: scale(1); /* Full size */
+   display: block; /* Make it visible */
 }
 
 /* Chatbot Header */

@@ -624,115 +624,135 @@
             }
         });
     </script>
-    <script>
-        const chatbot = document.getElementById('chatbot');
-        const chatbotClose = document.getElementById('chatbot-close');
-        const chatbotHeader = document.getElementById('chatbot-header');
-        const messagesContainer = document.getElementById('chatbot-messages');
-        const userInput = document.getElementById('user-input');
-        const sendButton = document.getElementById('send-button');
-        const toggleChatbotButton = document.getElementById('toggle-chatbot');
-        const infoButton = document.getElementById('info-button');
-        const helpText = document.getElementById('help-text');
-    
-        let isDragging = false;
-        let offsetX, offsetY;
-    
-        // Generate session ID
-        const sessionId = crypto.randomUUID();
-    
-        // Ensure the chatbot opens on the first click
-        document.addEventListener('DOMContentLoaded', () => {
-            chatbot.style.display = 'none'; // Ensure it's hidden initially
-            toggleChatbotButton.style.display = 'flex'; // Ensure toggle button is visible initially
-    
-            // Toggle Chatbot Button Click
-            toggleChatbotButton.addEventListener('click', () => {
-                chatbot.style.display = 'block'; // Show chatbot
-                toggleChatbotButton.style.display = 'none'; // Hide toggle button
-            });
+   <script>
+    const chatbot = document.getElementById('chatbot');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotHeader = document.getElementById('chatbot-header');
+    const messagesContainer = document.getElementById('chatbot-messages');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+    const toggleChatbotButton = document.getElementById('toggle-chatbot');
+    const infoButton = document.getElementById('info-button');
+    const helpText = document.getElementById('help-text');
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    // Generate session ID
+    const sessionId = crypto.randomUUID();
+
+    // Ensure the chatbot opens on the first click
+    document.addEventListener('DOMContentLoaded', () => {
+        chatbot.classList.remove('show'); // Ensure it's hidden initially
+        toggleChatbotButton.style.display = 'flex'; // Ensure toggle button is visible initially
+
+        // Toggle Chatbot Button Click
+        toggleChatbotButton.addEventListener('click', () => {
+            // Show chatbot with smooth transition
+            chatbot.classList.add('show');
+            chatbot.style.display = 'block'; // Ensure it's displayed
+
+            // Hide toggle button with smooth transition
+            toggleChatbotButton.classList.add('hide');
+
+            // Wait for the transition to complete before hiding the button
+            setTimeout(() => {
+                toggleChatbotButton.style.display = 'none';
+            }, 300); // Match the duration of the CSS transition (300ms)
         });
-    
-        // Close button functionality (minimize)
-        chatbotClose.addEventListener('click', () => {
-            chatbot.style.display = 'none'; // Hide chatbot
-            toggleChatbotButton.style.display = 'flex'; // Show toggle button
-        });
-    
-        // Allow hitting Enter to send a message
-        userInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault(); // Prevent newline in textarea
-                sendMessage();
-            }
-        });
-    
-        sendButton.addEventListener('click', () => {
+    });
+
+    // Close button functionality (minimize)
+    chatbotClose.addEventListener('click', () => {
+        // Hide chatbot with smooth transition
+        chatbot.classList.remove('show');
+
+        // Wait for the transition to complete before hiding the chatbot
+        setTimeout(() => {
+            chatbot.style.display = 'none';
+        }, 300); // Match the duration of the CSS transition (300ms)
+
+        // Show toggle button with smooth transition
+        toggleChatbotButton.style.display = 'flex';
+        setTimeout(() => {
+            toggleChatbotButton.classList.remove('hide');
+        }, 10); // Slight delay to ensure visibility during animation
+    });
+
+    // Allow hitting Enter to send a message
+    userInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent newline in textarea
             sendMessage();
-        });
-    
-        async function sendMessage() {
-            const userMessage = userInput.value.trim();
-            if (!userMessage) return;
-    
-            // Remove help text on first message
-            if (helpText) {
-                helpText.remove();
-                infoButton.style.display = 'inline'; // Show info button after first message
-            }
-    
-            displayMessage(userMessage, 'user');
-            userInput.value = '';
-    
-            try {
-                const response = await fetch("http://52.15.38.84/chat", { // Replace with your backend URL
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-Session-ID": sessionId,
-                    },
-                    body: JSON.stringify({ query: userMessage }),
-                });
-    
-                const data = await response.json();
-                const botMessage = data.response || "Sorry, I didn't understand that.";
-                displayMessage(botMessage, 'bot');
-    
-            } catch (error) {
-                console.error("Error:", error);
-                displayMessage("Sorry, something went wrong.", 'bot');
-            }
         }
-    
-        function displayMessage(message, sender) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('message');
-            messageElement.classList.add(sender + '-message');
-    
-             // Use innerHTML for bot messages to render HTML content from the backend
-            if (sender === 'bot') {
-                messageElement.innerHTML = message; // Render HTML as HTML
-            } else {
-                messageElement.textContent = message; // Render user messages as plain text
-            }
-    
-            messagesContainer.appendChild(messageElement);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    });
+
+    sendButton.addEventListener('click', () => {
+        sendMessage();
+    });
+
+    async function sendMessage() {
+        const userMessage = userInput.value.trim();
+        if (!userMessage) return;
+
+        // Remove help text on first message
+        if (helpText) {
+            helpText.remove();
+            infoButton.style.display = 'inline'; // Show info button after first message
         }
-    
-        // Info Button Functionality to Show Help Text Again
-        infoButton.addEventListener('click', () => {
-            if (!document.getElementById('help-text')) {
-                const helpMessage = document.createElement('div');
-                helpMessage.id = 'help-text';
-                helpMessage.classList.add('bot-message');
-                helpMessage.textContent =
-                    "Hi, I’m Hawkeye—your personal assistant powered by Karthik Arun! You can ask me anything about Karthik’s experience, skills, projects, or anything else you see on this portfolio. I’ll respond as if it’s Karthik himself speaking. Let’s chat!";
-                
-                messagesContainer.prepend(helpMessage);
-            }
-        });
-    </script>
+
+        displayMessage(userMessage, 'user');
+        userInput.value = '';
+
+        try {
+            const response = await fetch("http://52.15.38.84/chat", { // Replace with your backend URL
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Session-ID": sessionId,
+                },
+                body: JSON.stringify({ query: userMessage }),
+            });
+
+            const data = await response.json();
+            const botMessage = data.response || "Sorry, I didn't understand that.";
+            displayMessage(botMessage, 'bot');
+
+        } catch (error) {
+            console.error("Error:", error);
+            displayMessage("Sorry, something went wrong.", 'bot');
+        }
+    }
+
+    function displayMessage(message, sender) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.classList.add(sender + '-message');
+
+         // Use innerHTML for bot messages to render HTML content from the backend
+        if (sender === 'bot') {
+            messageElement.innerHTML = message; // Render HTML as HTML
+        } else {
+            messageElement.textContent = message; // Render user messages as plain text
+        }
+
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    // Info Button Functionality to Show Help Text Again
+    infoButton.addEventListener('click', () => {
+        if (!document.getElementById('help-text')) {
+            const helpMessage = document.createElement('div');
+            helpMessage.id = 'help-text';
+            helpMessage.classList.add('bot-message');
+            helpMessage.textContent =
+                "Hi, I’m Hawkeye—your personal assistant powered by Karthik Arun! You can ask me anything about Karthik’s experience, skills, projects, or anything else you see on this portfolio. I’ll respond as if it’s Karthik himself speaking. Let’s chat!";
+            
+            messagesContainer.prepend(helpMessage);
+        }
+    });
+</script>
     
     
     
