@@ -36,6 +36,9 @@
 
 </head>
 
+<!-- TODO : Make the "Take it for a spin" a clickable button to open the chatbot -->
+<!-- TODO : Expand the pill to have a clear call-to-action for opening the bot -->
+
 <body data-barba="wrapper">
     <div class="no-scroll-overlay"></div>
     <div class="loading-container">
@@ -176,11 +179,27 @@
                     </div>
 
                     <div class="resume-pill">
-                        <a href="assets/resume/MTech_resume_template REV.pdf" target="_blank">
+                        <a href="assets/resume/KarthikArunR_Resume.pdf" target="_blank">
                             <img src="assets/img/resume-icon-white.png" alt="Resume Icon">
                             <span>Get My Resume</span>
                         </a>
                     </div>
+
+                    <div class="chat-pill-container">
+                        <div class="chat-pill">
+                            <input type="text" id="chat-input" class="typewrite" placeholder="" data-period="2000"
+                                data-type='[ "Take me for a spin!", "What is your experience?", "Tell me about your projects.", "What are your skills?", "How can I contact you?" ]' />
+                            <button id="pill-send-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M3 12.9999H9V10.9999H3V1.84558C3 1.56944 3.22386 1.34558 3.5 1.34558C3.58425 1.34558 3.66714 1.36687 3.74096 1.40747L22.2034 11.5618C22.4454 11.6949 22.5337 11.9989 22.4006 12.2409C22.3549 12.324 22.2865 12.3924 22.2034 12.4381L3.74096 22.5924C3.499 22.7255 3.19497 22.6372 3.06189 22.3953C3.02129 22.3214 3 22.2386 3 22.1543V12.9999Z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+
                 </div>
 
                 <div class="arrow-container">
@@ -786,11 +805,14 @@
                                 </div>
                                 <ul class="excel-at-pills">
                                     <li>RAG Applications</li>
+                                    <li>Cloud-native ML</li>
                                     <li>Explainable AI</li>
                                     <li>Data Pipelines</li>
                                     <li>Ensemble Models</li>
                                     <li>MLOps</li>
                                     <li>Responsible GenAI</li>
+                                    <li>Data Wrangling</li>
+                                    <li>Building on AWS and Azure</li>
                                 </ul>
                             </div>
                         </div>
@@ -812,7 +834,6 @@
                                 <div class="experience-details">
                                     <div class="role-header">
                                         <h4>Data Science and Generative AI- Intern</h4>
-                                        <span class="company-name">Singapore Airlines</span>
                                         <span class="duration">Mar 2024 - Aug 2024</span>
                                     </div>
                                     <div class="role-description">
@@ -837,7 +858,6 @@
                                 <div class="experience-details">
                                     <div class="role-header">
                                         <h4>Analyst, Salesforce</h4>
-                                        <span class="company-name">Deloitte</span>
                                         <span class="duration">Jul 2021 - Jul 2023</span>
                                     </div>
                                     <div class="role-description">
@@ -885,7 +905,6 @@
                         <div class="stripe animate"></div>
                         <!-- SASTRA -->
                         <li class="education-item">
-
                             <div class="education-content">
                                 <div class="education-details">
                                     <span class="duration-pill">2017 - 2021</span>
@@ -894,6 +913,18 @@
                                     </p>
                                     <ul class="achievements">
                                         <li>CGPA: 8.09/10</li>
+                                        <li>
+                                            <a href="https://scholar.google.com/citations?user=83phRX0AAAAJ&hl=en"
+                                                target="_blank" class="highlight-link">
+                                                Published four research papers in the fuzzy logic domain.
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="br-hyperlink"
+                                                    viewBox="0 0 24 24" fill="#7351d8">
+                                                    <path
+                                                        d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="university-logo-sastra">
@@ -901,6 +932,7 @@
                                 </div>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </section>
@@ -1237,13 +1269,20 @@
             </div>
         </div>
 
-        <button id="toggle-chatbot">
-            <span>Hawkeye</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <button id="toggle-chatbot" class="hide">
+            <svg class="chat-icon" width="800" height="800" viewBox="0 0 1024 1024" class="icon"
+                xmlns="http://www.w3.org/2000/svg">
                 <path
-                    d="M12 8.36853L20.9679 13.1162L20.0321 14.8838L12 10.6315L3.96789 14.8838L3.03211 13.1162L12 8.36853Z">
-                </path>
+                    d="M780.7 582.4V286.3c0-74.2-60.7-134.9-134.9-134.9H198.2c-74.2 0-134.9 60.7-134.9 134.9v296.1c0 70.5 54.8 128.7 123.8 134.4 0 0-20 155.4 4.9 155.4s188.4-154.9 188.4-154.9h265.3c74.3 0 135-60.7 135-134.9m-424.1 74.9-17.4 16.4c-.3.3-34.5 32.7-73.2 67.1-8.5 7.5-16.2 14.3-23.3 20.5 1.9-20.9 3.9-36.6 3.9-36.8l8-62.3L192 657c-38.5-3.2-68.7-36-68.7-74.6V286.3c0-19.9 7.8-38.6 22.1-52.8 14.2-14.2 33-22.1 52.8-22.1h447.6c19.9 0 38.6 7.8 52.8 22.1 14.2 14.2 22.1 33 22.1 52.8v296.1c0 19.9-7.8 38.6-22.1 52.8-14.2 14.2-33 22.1-52.8 22.1z"
+                    fill="#f9f4ff" />
+                <path
+                    d="M830.3 337.9c-16.2-3.3-32.1 7.1-35.4 23.3s7.1 32.1 23.3 35.4c39 8 67.3 42.7 67.3 82.5v177c0 41.6-31.1 77.5-72.3 83.4l-32.7 4.7 7.8 32.1c2 8.1 3.9 16.8 5.8 25.3-17.6-16.4-37.3-35.2-55.2-52.7l-8.7-8.6H562.5c-21.9 0-36.6-1.4-47.2-8.6-13.7-9.3-32.4-5.8-41.7 7.9s-5.8 32.4 7.9 41.7c25.7 17.5 55.3 19 81 19h143.2c10 9.7 27.3 26.3 45 42.8 16.2 15.1 29.6 27.1 39.8 35.9 20 17 29.3 23.1 41.6 23.1 9.7 0 18.7-4.4 24.8-12.1 10.1-12.9 10.2-29.1.5-78.7-1.4-7.2-2.9-14.2-4.3-20.6 54.4-21.1 92.4-74.3 92.4-134.6v-177c.1-68-48.4-127.4-115.2-141.2"
+                    fill="#f9f4ff" />
+                <path
+                    d="M434.6 602.8c-35.9 0-71-17.1-98.8-48.1-24.6-27.5-39.3-61.6-39.3-91.4v-29.7l29.7-.3c.4 0 36.2-.4 95.4-.4 16.6 0 30 13.4 30 30s-13.4 30-30 30c-22.3 0-41.2.1-56.2.1 3.8 7.1 8.8 14.5 15.1 21.6 16 17.9 35.7 28.1 54.1 28.1s38.1-10.3 54.1-28.1c6.5-7.3 11.6-14.9 15.4-22.2-13.7-2.8-24.1-15-24-29.5.1-16.5 13.5-29.9 30-29.9h.1c27.1.1 32.5.2 33.6.3l28.9 1.1v28.9c0 29.8-14.7 63.9-39.3 91.4-27.9 31-62.9 48.1-98.8 48.1m107.1-109.5"
+                    fill="#f9f4ff" />
             </svg>
+            <span>Ask Hawkeye Anything!</span>
         </button>
 
 
@@ -1258,7 +1297,7 @@
     <script src="assets/cdn.jsdelivr.net/npm/vanilla-lazyload%4017.6.1/dist/lazyload.min.js"></script>
 
     <script src="assets/js/locomotive-scroll.min.js"></script>
-    <script defer src="assets/js/index-new.js"></script>
+    <script src="assets/js/index-new.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@latest/rive.js"></script>
     <script>
         const canvas = document.getElementById("rive-canvas");
@@ -1362,7 +1401,7 @@
                 toggleChatbotButton.classList.add('hide');
                 setTimeout(() => {
                     toggleChatbotButton.style.display = 'none';
-                }, 300); // Match duration of CSS transition (300ms)
+                }, 400);
             });
         });
 
@@ -1376,7 +1415,7 @@
                 chatbot.style.display = 'none'; // Hide after animation ends
                 toggleChatbotButton.style.display = 'flex'; // Show toggle button again
                 toggleChatbotButton.classList.remove('hide');
-            }, 300); // Match duration of CSS transition (300ms)
+            }, 400);
         });
 
         // Allow hitting Enter to send a message
@@ -1440,18 +1479,184 @@
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
-        // Info Button Functionality to Show Help Text Again
+        // Info Button Functionality to Toggle Help Text Visibility
         infoButton.addEventListener('click', () => {
-            if (!document.getElementById('help-text')) {
+            const helpTextElement = document.getElementById('help-text'); // Check if help text already exists
+
+            if (!helpTextElement) {
+                // Create and display help text if it doesn't exist
                 const helpMessage = document.createElement('div');
                 helpMessage.id = 'help-text';
                 helpMessage.classList.add('bot-message');
                 helpMessage.textContent =
                     "Hi, I’m Hawkeye—your personal assistant powered by Karthik Arun! You can ask me anything about Karthik’s experience, skills, projects, or anything else you see on this portfolio. I’ll respond as if it’s Karthik himself speaking. Let’s chat!";
 
-                messagesContainer.prepend(helpMessage);
+                messagesContainer.prepend(helpMessage); // Add the help text to the top of the chat window
+            } else {
+                // Remove help text if it already exists
+                helpTextElement.remove();
             }
         });
+
+    </script>
+    <script>
+        // Typewriter Effect Logic
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.isDeleting = false;
+            this.tick();
+        };
+
+        TxtType.prototype.tick = function () {
+            const i = this.loopNum % this.toRotate.length;
+            const fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            // Update placeholder text
+            this.el.setAttribute('placeholder', this.txt);
+
+            let delta = 100 - Math.random() * 50; // Faster typing and erasing
+            if (this.isDeleting) delta /= 2;
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 300; // Shorter pause before starting next word
+            }
+
+            setTimeout(() => {
+                if (!this.el.hasAttribute('data-stop')) { // Stop typewriter effect when user clicks
+                    this.tick();
+                }
+            }, delta);
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const inputEl = document.getElementById('chat-input');
+            const toRotate = inputEl.getAttribute('data-type');
+            const period = inputEl.getAttribute('data-period');
+
+            // Check if on mobile device
+            const isMobile = window.innerWidth <= 768;
+
+            const initializeTypewriter = () => {
+                if (toRotate) {
+                    const typewriterEffect = new TxtType(inputEl, JSON.parse(toRotate), period);
+
+                    // Stop typewriter effect on focus
+                    inputEl.addEventListener('focus', () => {
+                        inputEl.setAttribute('data-stop', 'true'); // Custom attribute to stop typing
+                        inputEl.setAttribute('placeholder', ''); // Clear placeholder text
+                    });
+
+                    // Allow hitting Enter to send a message
+                    inputEl.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter') {
+                            e.preventDefault(); // Prevent newline in the input field
+                            document.getElementById('pill-send-button').click(); // Trigger the send button click
+                        }
+                    });
+                }
+            };
+
+            if (isMobile) {
+                // No delay for mobile devices
+                initializeTypewriter();
+            } else {
+                // Add a delay for desktop devices
+                setTimeout(initializeTypewriter, 4000);
+            }
+        });
+
+
+        // Handle Send Button Click for New Chat Pill
+        document.getElementById('pill-send-button').addEventListener('click', () => {
+            const userQuery = document.getElementById('chat-input').value.trim();
+
+            if (userQuery) {
+                // Open chatbot window if hidden
+                const chatbotDiv = document.getElementById('chatbot');
+                chatbotDiv.classList.remove('hide'); // Remove hide class for animation
+                chatbotDiv.classList.add('show'); // Add show class for animation
+                chatbotDiv.style.display = 'block'; // Ensure it's displayed
+
+                // Hide the minimized toggle button
+                const toggleChatbotButton = document.getElementById('toggle-chatbot');
+                toggleChatbotButton.classList.add('hide');
+                setTimeout(() => {
+                    toggleChatbotButton.style.display = 'none';
+                }, 400); // Match CSS transition duration
+
+                // Remove help text on first message (if present)
+                const helpText = document.getElementById('help-text');
+                const infoButton = document.getElementById('info-button');
+
+                if (helpText) {
+                    helpText.remove(); // Remove help text
+                    infoButton.style.display = 'inline'; // Show info button after first message
+                }
+
+                // Use existing backend logic for processing messages
+                displayMessage(userQuery, 'user'); // Display user message in chatbot window
+
+                fetch("https://52.15.38.84.nip.io/chat", { // Replace with your backend URL if necessary
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Session-ID": sessionId,
+                    },
+                    body: JSON.stringify({ query: userQuery }),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        const botMessage = data.response || "Sorry, I didn't understand that.";
+                        displayMessage(botMessage, 'bot');
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        displayMessage("Sorry, something went wrong.", 'bot');
+                    });
+
+                // Clear input field in the new chat pill
+                document.getElementById('chat-input').value = '';
+
+                // Focus on chatbot's input area after opening it
+                const chatbotInputField = document.querySelector('#user-input');
+                if (chatbotInputField) chatbotInputField.focus();
+            }
+        });
+
+        // Reuse Existing Display Message Functionality from Chatbot JS
+        function displayMessage(message, sender) {
+            const messagesContainer = document.getElementById('chatbot-messages');
+
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.classList.add(`${sender}-message`);
+
+            if (sender === 'bot') {
+                messageElement.innerHTML = message; // Render HTML for bot responses
+            } else {
+                messageElement.textContent = message; // Render plain text for user messages
+            }
+
+            messagesContainer.appendChild(messageElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight; // Auto-scroll to latest message
+        }
+
+
     </script>
 </body>
 
