@@ -954,7 +954,7 @@ function initVisualFilter() {
         }, 700);
         setTimeout(function () {
           scroll.update();
-          console.log("scroll- updated");
+          // console.log("scroll- updated");
         }, 1000);
       }
     });
@@ -1170,35 +1170,32 @@ function initScrolltriggerChatbotToggle() {
   function updateToggleVisibility(scrollY) {
     const halfPageHeight = window.innerHeight / 3; // Top 1/3rd of the viewport
     const viewportHeight = window.innerHeight; // Height of the visible viewport
-  
+
     // Get Locomotive Scroll's total height
-    const locomotiveScrollHeight = scroll?.el?.offsetHeight || document.documentElement.scrollHeight;
-  
-    // Check if scrolled to the absolute bottom
-    const isAtBottom = scrollY + viewportHeight >= locomotiveScrollHeight - 1; // Allow for minor rounding errors
-  
-    console.log(
-      "ScrollY:", scrollY,
-      "HalfPageHeight:", halfPageHeight,
-      "LocomotiveScrollHeight:", locomotiveScrollHeight,
-      "IsAtBottom:", isAtBottom
-    );
-  
-    if (isAtBottom) {
-      // Hide the button when at the absolute bottom of the page
+    const locomotiveScrollHeight =
+      scroll?.el?.offsetHeight || document.documentElement.scrollHeight;
+
+    // Calculate threshold for hiding in the last 30% of viewport height from the bottom
+    const bottomThreshold = locomotiveScrollHeight - viewportHeight * 0.3;
+
+    // Check if scrolled to the absolute bottom or near-bottom threshold
+    const isAtBottom = scrollY + viewportHeight >= locomotiveScrollHeight - 1; // Absolute bottom
+    const isNearBottom = scrollY + viewportHeight >= bottomThreshold; // Last 30% of viewport height
+
+    if (isAtBottom || isNearBottom) {
+      // Hide the button when at or near the bottom
       hideToggleButton();
-      console.log("Hiding toggle at absolute bottom");
+      // console.log("Hiding toggle at or near bottom");
     } else if (scrollY > halfPageHeight || hasInteractedWithChat) {
       // Show the button after scrolling past top third or if user interacted
       showToggleButton();
-      console.log("Showing toggle");
+      // console.log("Showing toggle");
     } else {
       // Hide the button when above top third and no interaction
       hideToggleButton();
-      console.log("Hiding toggle at top third");
+      // console.log("Hiding toggle at top third");
     }
   }
-  
 
   // Function to show the toggle button
   function showToggleButton() {
