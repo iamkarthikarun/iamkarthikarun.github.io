@@ -1176,7 +1176,7 @@ function initScrolltriggerChatbotToggle() {
       scroll?.el?.offsetHeight || document.documentElement.scrollHeight;
 
     // Calculate threshold for hiding in the last 30% of viewport height from the bottom
-    const bottomThreshold = locomotiveScrollHeight - viewportHeight * 0.3;
+    const bottomThreshold = locomotiveScrollHeight - viewportHeight * 0.65;
 
     // Check if scrolled to the absolute bottom or near-bottom threshold
     const isAtBottom = scrollY + viewportHeight >= locomotiveScrollHeight - 1; // Absolute bottom
