@@ -1168,19 +1168,37 @@ function initScrolltriggerChatbotToggle() {
 
   // Helper function to update the visibility of the toggle button
   function updateToggleVisibility(scrollY) {
-    const halfPageHeight = window.innerHeight / 3;
-
-    if (hasInteractedWithChat) {
-      // Always show the toggle button if the user has interacted with the chatbot
-      showToggleButton();
-    } else if (scrollY > halfPageHeight) {
-      // Show the button after scrolling halfway down
-      showToggleButton();
-    } else {
-      // Hide the button when above halfway point
+    const halfPageHeight = window.innerHeight / 3; // Top 1/3rd of the viewport
+    const viewportHeight = window.innerHeight; // Height of the visible viewport
+  
+    // Get Locomotive Scroll's total height
+    const locomotiveScrollHeight = scroll?.el?.offsetHeight || document.documentElement.scrollHeight;
+  
+    // Check if scrolled to the absolute bottom
+    const isAtBottom = scrollY + viewportHeight >= locomotiveScrollHeight - 1; // Allow for minor rounding errors
+  
+    console.log(
+      "ScrollY:", scrollY,
+      "HalfPageHeight:", halfPageHeight,
+      "LocomotiveScrollHeight:", locomotiveScrollHeight,
+      "IsAtBottom:", isAtBottom
+    );
+  
+    if (isAtBottom) {
+      // Hide the button when at the absolute bottom of the page
       hideToggleButton();
+      console.log("Hiding toggle at absolute bottom");
+    } else if (scrollY > halfPageHeight || hasInteractedWithChat) {
+      // Show the button after scrolling past top third or if user interacted
+      showToggleButton();
+      console.log("Showing toggle");
+    } else {
+      // Hide the button when above top third and no interaction
+      hideToggleButton();
+      console.log("Hiding toggle at top third");
     }
   }
+  
 
   // Function to show the toggle button
   function showToggleButton() {
