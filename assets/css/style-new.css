@@ -414,7 +414,7 @@ main.touch .main-wrap {
   gap: 8px; /* Space between chat icon and text */
   opacity: 0; /* Hidden by default */
   transform: scale(0); /* Start hidden */
-  transition: opacity .3s ease, transform .3s ease; /* Smooth fade and scale effect */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and scale effect */
 }
 
 #toggle-chatbot.show {
@@ -427,7 +427,7 @@ main.touch .main-wrap {
 }
 
 #toggle-chatbot:hover {
-  box-shadow: 0px 6px 14px rgba(115,81,216,0.4); /* Glow effect on hover */
+  box-shadow: 0px 6px 14px rgba(115, 81, 216, 0.4); /* Glow effect on hover */
 }
 
 #toggle-chatbot .chat-icon {
@@ -479,8 +479,6 @@ main.touch .main-wrap {
   }
 }
 
-
-
 /* Chatbot Container */
 #chatbot {
   position: fixed;
@@ -493,7 +491,7 @@ main.touch .main-wrap {
   display: none; /* Initially hidden */
 
   /* Remove conflicting default dimensions */
-  width: 35%; 
+  width: 35%;
   height: 85vh;
 
   /* Remove conflicting default transform and opacity */
@@ -520,7 +518,6 @@ main.touch .main-wrap {
   animation: closeChat 0.4s ease-in-out forwards;
   transform-origin: bottom right; /* Anchor at bottom-right */
 }
-
 
 /* Chatbot Header */
 #chatbot-header {
@@ -596,20 +593,20 @@ main.touch .main-wrap {
 
 /* Tooltip (Pill Style) */
 #info-button:hover::after {
-    content: "Ask me about Karthik's experience, skills, or projects!"; /* Tooltip text */
-    position: absolute;
-    top: 3.5%; /* Align vertically with the button */
-    left: 18%; /* Position to the right of the button with spacing */
-    transform: translateY(-50%); /* Center vertically */
-    background-color: #f9f4ff; /* Accent background color */
-    color: #7351d8; /* Light text color */
-    padding: 5px 12px; /* Padding for pill shape */
-    border-radius: 20px; /* Rounded edges for pill shape */
-    font-size: 13px; /* Smaller font size for compact look */
-    font-weight: 500; /* Slightly bold text for readability */
-    white-space: nowrap; /* Ensure single-line text */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
-    z-index: 1000; /* Ensure it appears above other elements */
+  content: "Ask me about Karthik's experience, skills, or projects!"; /* Tooltip text */
+  position: absolute;
+  top: 3.5%; /* Align vertically with the button */
+  left: 18%; /* Position to the right of the button with spacing */
+  transform: translateY(-50%); /* Center vertically */
+  background-color: #f9f4ff; /* Accent background color */
+  color: #7351d8; /* Light text color */
+  padding: 5px 12px; /* Padding for pill shape */
+  border-radius: 20px; /* Rounded edges for pill shape */
+  font-size: 13px; /* Smaller font size for compact look */
+  font-weight: 500; /* Slightly bold text for readability */
+  white-space: nowrap; /* Ensure single-line text */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+  z-index: 1000; /* Ensure it appears above other elements */
 }
 
 /* Media query for smaller screens (mobile) */
@@ -619,123 +616,121 @@ main.touch .main-wrap {
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 100vw; /* Full-screen width */
-    height: 85vh; /* Full-screen height */
+    width: 90vw; /* Full-screen width */
+    height: 70vh; /* Full-screen height */
     border-radius: 0; /* Remove rounded corners for full screen */
     box-shadow: none; /* Remove shadow for simplicity */
     z-index: 9999; /* Ensure it appears above all other elements */
     display: none; /* Initially hidden */
     background-color: #ffffff; /* Clean white background */
     overflow-y: auto; /* Allow scrolling if content overflows */
-}
-
-  
-/* Chatbot Open Animation (Mobile) */
-#chatbot.show {
-  animation: openChatMobile 0.4s ease-in-out forwards;
-  width: 90vw; /* Full-screen width */
-  height: 85vh; /* Full-screen height */
-  margin-left: 3%;
-  margin-right: 5%;
-  margin-bottom: 5%;
-  opacity: 1; /* Fully visible */
-  transform: scale(1); /* Full size */
-  display: block; /* Make it visible */
-}
-
-/* Chatbot Close Animation (Mobile) */
-#chatbot.hide {
-  animation: closeChatMobile 0.4s ease-in-out forwards;
-}
-
-/* Chatbot Open Animation Keyframes (Mobile) */
-@keyframes openChatMobile {
-  from {
-    transform: translateY(100%); /* Start from below the screen */
-    opacity: 0;
   }
-  to {
-    transform: translateY(0); /* Slide into view */
-    opacity: 1;
+
+  /* Chatbot Open Animation (Mobile) */
+  #chatbot.show {
+    animation: openChatMobile 0.4s ease-in-out forwards;
+    width: 90vw; /* Full-screen width */
+    height: 70vh; /* Full-screen height */
+    margin-left: 3%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* Full size */
+    display: block; /* Make it visible */
+  }
+
+  /* Chatbot Close Animation (Mobile) */
+  #chatbot.hide {
+    animation: closeChatMobile 0.4s ease-in-out forwards;
+  }
+
+  /* Chatbot Open Animation Keyframes (Mobile) */
+  @keyframes openChatMobile {
+    from {
+      transform: translateY(100%); /* Start from below the screen */
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0); /* Slide into view */
+      opacity: 1;
+    }
+  }
+
+  /* Chatbot Close Animation Keyframes (Mobile) */
+  @keyframes closeChatMobile {
+    from {
+      transform: translateY(0); /* Start in view */
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%); /* Slide out of view */
+      opacity: 0;
+    }
+  }
+
+  /* Chat Pill Container - Centered Below Resume Button */
+  .chat-pill-container {
+    position: relative; /* Relative to parent container */
+    margin: 20px auto; /* Center horizontally with some spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Adjust width to fit smaller screens */
+  }
+
+  /* Chat Pill - Smaller and Centered */
+  .chat-pill {
+    display: flex;
+    align-items: center;
+    background-color: #e5e3e8; /* Light gray background */
+    border-radius: 50px; /* Rounded corners */
+    padding: 10px;
+    width: 100%; /* Full width within container */
+    max-width: 300px; /* Limit maximum size for smaller screens */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for visibility */
+  }
+
+  /* Chat Input Field - Adjust Font Size for Mobile */
+  #chat-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif; /* Match portfolio font */
+    font-size: 0.9rem; /* Slightly smaller font size for mobile */
+    padding: 8px; /* Adjust padding for mobile */
+    background-color: transparent; /* Keep input background consistent with pill */
+  }
+
+  #chat-input::placeholder {
+    color: #7351d8; /* Accent color for placeholder text */
+    opacity: 0.3; /* Slightly lighter placeholder text */
+  }
+
+  /* Send Button - Smaller and Aligned with Input Field */
+  #pill-send-button {
+    background-color: #7351d8; /* Accent color for button */
+    border-radius: 50%; /* Circular button */
+    border: none;
+    width: 35px; /* Smaller size for mobile */
+    height: 35px; /* Smaller size for mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px; /* Space between input and button */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  #pill-send-button:hover {
+    background-color: #5a3db2; /* Slightly darker shade on hover */
+  }
+
+  #pill-send-button svg {
+    width: 20px; /* Scale down SVG icon size for mobile */
+    height: auto;
+    fill: white; /* Ensure icon is visible on purple button */
   }
 }
-
-/* Chatbot Close Animation Keyframes (Mobile) */
-@keyframes closeChatMobile {
-  from {
-    transform: translateY(0); /* Start in view */
-    opacity: 1;
-  }
-  to {
-    transform: translateY(100%); /* Slide out of view */
-    opacity: 0;
-  }
-}
-
-/* Chat Pill Container - Centered Below Resume Button */
-.chat-pill-container {
-  position: relative; /* Relative to parent container */
-  margin: 20px auto; /* Center horizontally with some spacing */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%; /* Adjust width to fit smaller screens */
-}
-
-/* Chat Pill - Smaller and Centered */
-.chat-pill {
-  display: flex;
-  align-items: center;
-  background-color: #e5e3e8; /* Light gray background */
-  border-radius: 50px; /* Rounded corners */
-  padding: 10px;
-  width: 100%; /* Full width within container */
-  max-width: 300px; /* Limit maximum size for smaller screens */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for visibility */
-}
-
-/* Chat Input Field - Adjust Font Size for Mobile */
-#chat-input {
-  flex-grow: 1;
-  border: none;
-  outline: none;
-  font-family: 'Poppins', sans-serif; /* Match portfolio font */
-  font-size: 0.9rem; /* Slightly smaller font size for mobile */
-  padding: 8px; /* Adjust padding for mobile */
-  background-color: transparent; /* Keep input background consistent with pill */
-}
-
-#chat-input::placeholder {
-  color: #7351d8; /* Accent color for placeholder text */
-  opacity: 0.3; /* Slightly lighter placeholder text */
-}
-
-/* Send Button - Smaller and Aligned with Input Field */
-#pill-send-button {
-  background-color: #7351d8; /* Accent color for button */
-  border-radius: 50%; /* Circular button */
-  border: none;
-  width: 35px; /* Smaller size for mobile */
-  height: 35px; /* Smaller size for mobile */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10px; /* Space between input and button */
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-#pill-send-button:hover {
-  background-color: #5a3db2; /* Slightly darker shade on hover */
-}
-
-#pill-send-button svg {
-  width: 20px; /* Scale down SVG icon size for mobile */
-  height: auto;
-  fill: white; /* Ensure icon is visible on purple button */
-}
-}
-
 
 /* Message Styling */
 .message {
@@ -2103,8 +2098,6 @@ main.touch .main-wrap {
     color: var(--color-dark);
     margin-bottom: 0.25rem;
   }
-
-
 
   /* Style for the duration */
   .experience-details .duration {
