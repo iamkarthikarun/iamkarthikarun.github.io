@@ -584,7 +584,7 @@ main.touch .main-wrap {
     bottom: 0;
     right: 0;
     width: 100vw; /* Full-screen width */
-    height: 100vh; /* Full-screen height */
+    height: 85vh; /* Full-screen height */
     border-radius: 0; /* Remove rounded corners for full screen */
     box-shadow: none; /* Remove shadow for simplicity */
     z-index: 9999; /* Ensure it appears above all other elements */
@@ -597,8 +597,9 @@ main.touch .main-wrap {
 /* Chatbot Open Animation (Mobile) */
 #chatbot.show {
   animation: openChatMobile 0.4s ease-in-out forwards;
-  width: 100vw; /* Full-screen width */
-  height: 100vh; /* Full-screen height */
+  width: 90vw; /* Full-screen width */
+  height: 85vh; /* Full-screen height */
+  margin-bottom: 5%;
   opacity: 1; /* Fully visible */
   transform: scale(1); /* Full size */
   display: block; /* Make it visible */
