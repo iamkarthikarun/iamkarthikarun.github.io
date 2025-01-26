@@ -445,6 +445,42 @@ main.touch .main-wrap {
   margin-left: auto; /* Push arrow to the far right */
 }
 
+@media screen and (max-width: 768px) {
+  #toggle-chatbot {
+    bottom: 15px; /* Closer to the bottom for better spacing */
+    right: 15px; /* Closer to the edge for smaller screens */
+    padding-top: 8px; /* Reduced padding */
+    padding-bottom: 8px; /* Reduced padding */
+    padding-left: 10px; /* Reduced padding */
+    padding-right: 10px; /* Reduced padding */
+    font-size: 12px; /* Smaller font size for text */
+    border-radius: 20px; /* Slightly smaller pill shape */
+    gap: 4px; /* Reduced spacing between icon and text */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+
+  #toggle-chatbot .chat-icon {
+    width: 20px; /* Smaller icon size */
+    height: auto;
+  }
+
+  #toggle-chatbot span {
+    display: none; /* Hide text except "Hawkeye" */
+  }
+
+  #toggle-chatbot::after {
+    content: "Hawkeye"; /* Display only "Hawkeye" as text */
+    font-weight: bold;
+    margin-left: 4px;
+  }
+
+  #toggle-chatbot .arrow-icon {
+    display: none; /* Hide arrow icon on mobile */
+  }
+}
+
+
+
 /* Chatbot Container */
 #chatbot {
   position: fixed;
