@@ -599,6 +599,8 @@ main.touch .main-wrap {
   animation: openChatMobile 0.4s ease-in-out forwards;
   width: 90vw; /* Full-screen width */
   height: 85vh; /* Full-screen height */
+  margin-left: 3%;
+  margin-right: 5%;
   margin-bottom: 5%;
   opacity: 1; /* Fully visible */
   transform: scale(1); /* Full size */
