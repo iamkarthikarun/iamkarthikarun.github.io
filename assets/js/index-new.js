@@ -16,16 +16,6 @@ function initLoaderHome() {
     top: "0",
   });
 
-  if ($(window).width() > 540) {
-    tl.set("main .once-in", {
-      y: "50vh",
-    });
-  } else {
-    tl.set("main .once-in", {
-      y: "10vh",
-    });
-  }
-
   tl.set(".loading-words", {
     opacity: 0,
     y: -50,
@@ -139,18 +129,6 @@ function initLoaderHome() {
     height: "0vh",
   });
 
-  tl.to(
-    "main .once-in",
-    {
-      duration: 1.5,
-      y: "0vh",
-      stagger: 0.07,
-      ease: "Expo.easeOut",
-      clearProps: true,
-    },
-    "=-.8"
-  );
-
   tl.set(
     "html",
     {
@@ -171,16 +149,6 @@ function initLoader() {
   tl.set(".loading-screen", {
     top: "0",
   });
-
-  if ($(window).width() > 540) {
-    tl.set("main .once-in", {
-      y: "50vh",
-    });
-  } else {
-    tl.set("main .once-in", {
-      y: "10vh",
-    });
-  }
 
   tl.set(".loading-words", {
     opacity: 1,
@@ -235,18 +203,6 @@ function initLoader() {
   tl.set(".loading-screen .rounded-div-wrap.bottom", {
     height: "0vh",
   });
-
-  tl.to(
-    "main .once-in",
-    {
-      duration: 1,
-      y: "0vh",
-      stagger: 0.05,
-      ease: "Expo.easeOut",
-      clearProps: "true",
-    },
-    "=-.8"
-  );
 
   tl.set(
     "html",
@@ -389,27 +345,8 @@ function pageTransitionIn() {
 function pageTransitionOut() {
   var tl = gsap.timeline();
 
-  if ($(window).width() > 540) {
-    tl.set("main .once-in", {
-      y: "50vh",
-    });
-  } else {
-    tl.set("main .once-in", {
-      y: "20vh",
-    });
-  }
-
   tl.call(function () {
     scroll.start();
-  });
-
-  tl.to("main .once-in", {
-    duration: 1,
-    y: "0vh",
-    stagger: 0.05,
-    ease: "Expo.easeOut",
-    delay: 0.8,
-    clearProps: "true",
   });
 }
 

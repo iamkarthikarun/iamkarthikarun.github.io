@@ -128,7 +128,7 @@ main.touch .main-wrap {
   display: none;
   white-space: nowrap;
   will-change: opacity;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 2.4vw, 2.5rem);
   /* padding-left: 0.6em; */
 }
 
@@ -147,81 +147,83 @@ main.touch .main-wrap {
   display: none;
 }
 
+/* Positions below are each word's original design offset from the cluster's own average (center) position, expressed as % of container, so the whole scatter is centered in the viewport at any size. */
 .home-active:nth-child(2) {
-  left: calc(1085.54px + var(--left-offset));
-  top: 245.469px;
+  left: 56.77%;
+  top: 23.98%;
 }
 .home-active:nth-child(3) {
-  left: calc(1161.91px + var(--left-offset));
-  top: 721.459px;
+  left: 61.83%;
+  top: 76.87%;
 }
 .home-active:nth-child(4) {
-  left: calc(883.185px + var(--left-offset));
-  top: 569.8px;
+  left: 43.39%;
+  top: 60.02%;
 }
 .home-active:nth-child(5) {
-  left: calc(951.861px + var(--left-offset));
-  top: 319.913px;
+  left: 47.93%;
+  top: 32.25%;
 }
 .home-active:nth-child(6) {
-  left: calc(856.372px + var(--left-offset));
-  top: 435.933px;
+  /* nudged further from center to clear the persistently-centered first/last hello */
+  left: 36.25%;
+  top: 42.04%;
 }
 .home-active:nth-child(7) {
-  left: calc(1066.44px + var(--left-offset));
-  top: 637.338px;
+  left: 55.51%;
+  top: 67.52%;
 }
 .home-active:nth-child(8) {
-  left: calc(760.883px + var(--left-offset));
-  top: 307.989px;
+  left: 35.3%;
+  top: 30.93%;
 }
 .home-active:nth-child(9) {
-  left: calc(989.049px + var(--left-offset));
-  top: 178.025px;
+  left: 50.39%;
+  top: 16.49%;
 }
 .home-active:nth-child(10) {
-  left: calc(1276.5px + var(--left-offset));
-  top: 333.836px;
+  left: 69.4%;
+  top: 33.8%;
 }
 .home-active:nth-child(11) {
-  left: calc(1219.21px + var(--left-offset));
-  top: 615.244px;
+  left: 65.61%;
+  top: 65.07%;
 }
 .home-active:nth-child(12) {
-  left: calc(779.976px + var(--left-offset));
-  top: 650.014px;
+  left: 36.56%;
+  top: 68.93%;
 }
 .home-active:nth-child(13) {
-  left: calc(818.185px + var(--left-offset));
-  top: 219.546px;
+  left: 39.09%;
+  top: 21.1%;
 }
 .home-active:nth-child(14) {
-  left: calc(983.767px + var(--left-offset));
-  top: 758.304px;
+  left: 50.04%;
+  top: 80.97%;
 }
 .home-active:nth-child(15) {
-  left: calc(1295.61px + var(--left-offset));
-  top: 484.126px;
+  left: 70.67%;
+  top: 50.5%;
 }
 .home-active:nth-child(16) {
-  left: calc(844.875px + var(--left-offset));
-  top: 737.622px;
+  left: 40.85%;
+  top: 78.67%;
 }
 .home-active:nth-child(17) {
-  left: calc(703.601px + var(--left-offset));
-  top: 448.356px;
+  left: 31.51%;
+  top: 46.53%;
 }
 .home-active:nth-child(18) {
-  left: calc(742.601px + var(--left-offset));
-  top: 555.648px;
+  left: 34.08%;
+  top: 58.45%;
 }
 .home-active:nth-child(19) {
-  left: calc(1117.47px + var(--left-offset));
-  top: 369.254px;
+  left: 58.88%;
+  top: 37.74%;
 }
 .home-active:nth-child(20) {
-  left: calc(1142.82px + var(--left-offset));
-  top: 524.876px;
+  left: 60.56%;
+  top: 55.03%;
 }
 
 /* Add special size adjustments for specific scripts */
