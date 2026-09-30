@@ -1,0 +1,221 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% \input{glyphtounicode} % pdfTeX-only primitive, incompatible with tectonic's XeTeX engine
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1 % pdfTeX-only primitive, incompatible with tectonic's XeTeX engine
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} %----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Karthik Arun} \\ \vspace{1pt}
+    \href{https://iamkarthikarun.github.io}{\underline{iamkarthikarun.github.io}} \small +91-79040 56987 $|$ \href{mailto:x@x.com}{\underline{karthikarun2000@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/karthikarunr}} $|$ 
+    
+\end{center}
+
+%-----------SUMMARY-----------
+\begin{center}
+\small{Data Scientist and AI Engineer building autonomous, LLM-powered systems for enterprise and aviation environments, from an aircraft-defect chatbot at Singapore Airlines to an autonomous CRM agent at Walmart Global Tech, with a focus on reliability and measurable business impact.}
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+
+\resumeSubHeadingListStart
+\resumeSubheading
+{Software Development Engineer III - ML/AI}{Jul 2025 -- Present}
+{Walmart Global Tech}{Bangalore, KA, India}
+\resumeItemListStart
+\resumeItem{Engineered a 4-class seller segmentation model using a robust ensemble architecture, resolving a highly volatile top-tier segment to achieve a 75\% precision-recall threshold}
+\resumeItem{Architected a two-stage NLP entity resolution pipeline for fuzzy Name/Address matching, serving models via Vertex AI and processing at scale on DataProc-managed Spark with BigQuery as the source/sink; utilized diverse edit distance metrics to cross-reference Walmart sellers with external systems, driving an 18-percentage-point lift over baseline accuracy}
+\resumeItem{Shipped the debut release of BD-Copilot, an autonomous agent that executes Salesforce workflows on-demand, doubles as a documentation-search chatbot advisor, and reports health through a Grafana/Prometheus/OpenObserve telemetry stack; now developing its next iteration, a dynamic UI that adapts in real time to user preferences.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Associate Data Scientist}{Apr 2025 -- Jul 2025}
+{Daimler India Commercial Vehicles}{Chennai, TN, India}
+\resumeItemListStart
+\resumeItem{Built hierarchical forecasting pipeline for 1,800+ warranty claim series using Nixtla and Spark-distributed deep learning and statistical models with cross-validation for anomaly-resistant predictions}
+\resumeItem{Engineered production-scale failure rate analytics pipeline processing 500K+ warranty claims using Spark, reducing analysis time from days to hours with interactive Nevada plot visualizations}
+\resumeItem{Discovered part failure relationships using FP-Growth association mining and Louvain clustering, identifying 50+ high-risk part communities for predictive maintenance optimization}
+\resumeItemListEnd
+
+\resumeSubheading
+{Data Science Intern}{Mar 2024 -- Aug 2024}
+{Singapore Airlines}{Singapore}
+\resumeItemListStart
+\resumeItem{Built a hybrid-inference aircraft-defect chatbot combining AWS Bedrock with self-hosted, quantized LLMs for low-latency, data-sovereign responses, cutting time-to-fix by 30\%}
+\resumeItem{Engineered a retrieval-augmented generation pipeline with dense-sparse hybrid search, lifting document-retrieval accuracy by 40\%}
+\resumeItem{Replaced AWS Textract with Claude-3 Haiku for OCR in the document processing pipeline, cutting monthly costs from \$12 to \$0.05 per 1,000 documents while maintaining 95\% accuracy}
+\resumeItemListEnd
+
+\resumeSubheading
+{Salesforce Analyst}{Jul 2021 -- Jul 2023}
+{Deloitte Consulting}{Chennai, TN, India}
+\resumeItemListStart
+\resumeItem{Developed and deployed large-scale predictive models using AWS SageMaker for customer churn prediction, identifying 85\% of at-risk customers 2 months in advance}
+\resumeItem{Built recommendation systems for vehicle service packages using Salesforce Einstein AI, increasing cross-sell revenue by \$2.5M annually}
+\resumeItem{Engineered scalable model serving pipelines using AWS Glue, processing 2TB+ of customer data with 40\% reduced latency}
+\resumeItem{Built a CI/CD system from the ground up for cloud deployments, using BitBucket Pipelines, SFDX, Jenkins and Docker, improving deployment times by 97\%}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Generative AI and Agentic Systems}{: AWS Bedrock, Vertex AI, LangChain, LangGraph, HuggingFace} \\
+\textbf{Machine Learning}{: Python, SQL, PyTorch, Scikit-learn, Nixtla} \\
+\textbf{Cloud and Infrastructure}{: AWS (SageMaker, Glue), GCP (DataProc, BigQuery)} \\
+\textbf{Engineering and Deployment}{: Docker, FastAPI, Jenkins, Airflow, Git, Shell Scripting} \\
+\textbf{Monitoring and Observability}{: Grafana, Prometheus, OpenObserve, MLflow} \\
+\textbf{Data and Visualization}{: MySQL, PostgreSQL, MongoDB, Neo4j, Tableau, Plotly}
+}}
+\end{itemize}
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\resumeSubHeadingListStart
+\resumeSubheading
+{AWS Certified Machine Learning Associate}{Oct 2024}
+{Amazon Web Services}{}
+\resumeSubheading
+{Salesforce Certified AI Associate}{Oct 2024}
+{Salesforce}{}
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{National University of Singapore}{Singapore}
+{Master of Technology in Enterprise Business Analytics}{Aug 2023 -- Oct 2024}
+\resumeItemListStart
+\resumeItem{Cumulative GPA: 4.75/5.0; IBM Medal for Best Outgoing Student}
+\resumeItemListEnd
+
+\resumeSubheading
+{SASTRA University}{Thanjavur, TN, India}
+{Bachelor of Technology - Information and Communication Technology}{Jul 2017 -- Jul 2021}
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{TurboPredict} $|$ \emph{Singapore Airlines R\&D} $|$ \emph{PyTorch, Docker, Airflow, FastAPI}}{May 2024}
+\resumeItemListStart
+\resumeItem{Built an end-to-end ML pipeline for real-time turbofan engine health monitoring, implementing automated model retraining and deployment pipelines}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{QuizMasterAI} $|$ \emph{NUS-ISS} $|$ \emph{LangChain, Transformers, Qdrant}}{Mar 2024}
+\resumeItemListStart
+\resumeItem{Fine-tuned an open-source LLM for question generation and evaluation in a school setting, using PEFT techniques and implementing efficient serving architecture and engineered prompts}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{GraphRecommend} $|$ \emph{NUS Co-op Store} $|$ \emph{PyTorch Geometric, Neo4j, FastAPI}}{Feb 2024}
+\resumeItemListStart
+\resumeItem{Developed a production-ready recommender system using Graph Neural Networks, serving 500k+ users with sub 50ms latency}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\end{document}
